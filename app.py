@@ -84,8 +84,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            send_text_message(event.reply_token, event.source.userID)
-
+            send_text_message(event.reply_token, event.source.user)
     return "OK"
 
 
