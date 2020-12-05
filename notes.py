@@ -40,9 +40,13 @@ noteNumDict = {
     "Cb" :11,
 }
 
-diffChordDict = {
-    [4,3] : "Major",
-}
+diffList = [
+    [4,3],
+]
+
+chordList = [
+    "Major"
+]
 
 #convert note to corresponding number, starting from C = 0, B = 11
 def noteToNumber(note):
