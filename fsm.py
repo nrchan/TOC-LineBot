@@ -44,7 +44,7 @@ class TocMachine():
         reply_token = event.reply_token
         send_text_message(reply_token, "Trigger state1")
 
-    def on_exit_state1(self, event):
+    def on_exit_state1(self):
         print("Leaving state1")
 
     def on_enter_state2(self, event):
@@ -54,5 +54,5 @@ class TocMachine():
         send_text_message(reply_token, "Trigger state2")
         self.go_back()
 
-    def on_exit_state2(self, event):
+    def on_exit_state2(self):
         print("Leaving state2")
