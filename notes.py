@@ -1,7 +1,6 @@
 import re
 
-noteBB = r"[A-G][#|x|b{2}]{0,1}"
-noteB = r"[A-G][#|x|b]?"
+note = r"[A-G]#?b{0,2}"
 
 noteNumDict = {
     "C"  : 0,
@@ -51,20 +50,7 @@ def noteToNumber(note):
 
 #return all notes in text
 def containNotes(text):
-    BB = re.findall(noteBB, text)
-    B = re.findall(noteB, text)
-    print(BB)
-    print(B)
-    result = []
-    for i in range(len(B)):
-        if(BB[i] == B[i]):
-            result.append(BB[i])
-        elif(BB[i][0:1] == B[i][0:1]):
-            result.append(BB[i])
-        else:
-            result.append(B[i])
-            B.remove(B[i])
-    return result
+    return re.findall(note, text)
 
 def notesToChord(noteList):
     numList = []
