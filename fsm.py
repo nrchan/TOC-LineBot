@@ -1,4 +1,4 @@
-from notes import containNotes
+from notes import containNotes, noteToNumber
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel
 
@@ -81,5 +81,6 @@ class TocMachine():
     def on_enter_chordResult(self, event):
         print("I'm entering chordResult")
         reply_token = event.reply_token
-        text = self.notes[0]
+        print(self.notes)
+        text = noteToNumber(self.notes[0])
         send_text_message(reply_token, text)
