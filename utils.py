@@ -56,6 +56,10 @@ def send_go_to_menu_button(reply_token):
                     label="前往「選單」",
                     text="選單"
                 ),
+                MessageTemplateAction(
+                    label="一定要嗎",
+                    text="選單"
+                ),
             ]
         )
     )
