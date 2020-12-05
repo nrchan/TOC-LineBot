@@ -57,6 +57,10 @@ diffList = [
     [3,3,4],
     #dim
     [3,3,3],
+    #aug
+    [4,4],
+    [4,4,2],
+    [4,4,3],
 ]
 
 chordList = [
@@ -71,6 +75,9 @@ chordList = [
     ["Dominant 9"],
     ["Half diminished 7"],
     ["Diminished 7"],
+    ["Augmented"],
+    ["Augmented 7"],
+    ["Augmented Major 7"],
 ]
 
 #convert note to corresponding number, starting from C = 0, B = 11
@@ -94,7 +101,6 @@ def notesToChord(noteList):
     whichChord = -100
     for i in range(len(diffList)):
         if whichChord != -100:
-            whichChord -= 1
             break
         if len(diff) != len(diffList[i]):
             continue
@@ -104,7 +110,6 @@ def notesToChord(noteList):
             if j == len(diffList[i])-1:
                 whichChord = i
                 break
-    print("whichChord" + str(whichChord) + " diff " + str(diff))
     if whichChord < len(chordList) and whichChord > -1:
         result = noteList[0] + " " + chordList[whichChord][0]
     else:
