@@ -1,14 +1,15 @@
+from notes import containNotes
 from transitions.extensions import GraphMachine
-
 from utils import send_text_message, send_menu_carousel
 
 
 class TocMachine():
     def __init__(self):
+        self.notes = []
         self.machine = GraphMachine(
             model=self, 
             **{
-                "states":["start", "menu", "chord", "chordNote"],
+                "states":["start", "menu", "chord", "chordResult", "chordNote"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -27,6 +28,12 @@ class TocMachine():
                         "source": "menu",
                         "dest": "chordNote",
                         "conditions": "is_going_to_chordNote",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "chord",
+                        "dest": "chordResult",
+                        "conditions": "is_going_to_chordResult",
                     },
                 ],
                 "initial":"start",
@@ -48,6 +55,11 @@ class TocMachine():
         text = event.message.text
         return "組成音" in text
 
+    def is_going_to_chordResult(self, event):
+        text = event.message.text
+        self.notes = containNotes(text)
+        return self.notes is not None
+
     #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
@@ -64,4 +76,10 @@ class TocMachine():
         print("I'm entering chordNote")
         reply_token = event.reply_token
         text = "請輸入和弦的英文名稱，我會想辦法告訴你他是由什麼音符組成的。"
+        send_text_message(reply_token, text)
+
+    def on_enter_chordResult(self, event):
+        print("I'm entering chordResult")
+        reply_token = event.reply_token
+        text = self.notes
         send_text_message(reply_token, text)
