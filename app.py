@@ -12,10 +12,9 @@ from utils import send_text_message
 
 load_dotenv()
 
-machine = TocMachine()
+machine = {}
 
 app = Flask(__name__, static_url_path="")
-
 
 # get channel_secret and channel_access_token from your environment variable
 channel_secret = os.getenv("LINE_CHANNEL_SECRET", None)
@@ -30,7 +29,7 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 parser = WebhookParser(channel_secret)
 
-
+"""
 @app.route("/callback", methods=["POST"])
 def callback():
     signature = request.headers["X-Line-Signature"]
@@ -51,14 +50,12 @@ def callback():
         if not isinstance(event.message, TextMessage):
             continue
 
-        user_id = event.source.userID
-
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=event.message.text)
         )
 
     return "OK"
-
+"""
 
 @app.route("/webhook", methods=["POST"])
 def webhook_handler():
@@ -81,11 +78,16 @@ def webhook_handler():
             continue
         if not isinstance(event.message.text, str):
             continue
-        print(f"\nFSM STATE: {machine.state}")
+
+        user_id = event.source.userId
+        if user_id not in machine:
+            machine[user_id] = TocMachine()
+
+        print(f"\nFSM STATE: {machine[user_id].state}")
         print(f"REQUEST BODY: \n{body}")
-        response = machine.advance(event)
+        response = machine[user_id].advance(event)
         if response == False:
-            send_text_message(event.reply_token, f"Not Entering any State {machine.state}")
+            send_text_message(event.reply_token, f"Not Entering any State")
 
     return "OK"
 
