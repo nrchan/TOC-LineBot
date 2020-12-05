@@ -1,7 +1,7 @@
 import os
 
 from linebot import LineBotApi, WebhookParser
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
 
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
@@ -44,6 +44,22 @@ def send_menu_carousel(reply_token):
     )
     line_bot_api.reply_message(reply_token, carousel_template)
 
+    return "OK"
+
+def send_go_to_menu_button(reply_token):
+    confirm_template = TemplateSendMessage(
+        alt_text="前往選單",
+        template=ConfirmTemplate(
+            text="不知道要幹嘛嗎？不如前往「選單」查看各項功能 😉",
+            actions=[
+                MessageTemplateAction(
+                    label="前往「選單」",
+                    text="選單"
+                ),
+            ]
+        )
+    )
+    line_bot_api.reply_message(reply_token, confirm_template)
     return "OK"
 """
 def send_image_url(id, img_url):

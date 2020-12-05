@@ -8,7 +8,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 from fsm import TocMachine
-from utils import send_text_message
+from utils import send_text_message, send_go_to_menu_button
 
 load_dotenv()
 machine = {}
@@ -58,7 +58,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine[user_id].advance(event)
         if response == False:
-            send_text_message(event.reply_token, f"可先前往「選單」查看各項功能 😉")
+            send_go_to_menu_button(event.reply_token)
 
     return "OK"
 
