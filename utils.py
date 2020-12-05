@@ -1,7 +1,7 @@
 import os
 
 from linebot import LineBotApi, WebhookParser
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage
 
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
@@ -22,7 +22,7 @@ def send_menu_carousel(reply_token):
                     text="輸入音符名稱，查詢它們能組成哪個和弦",
                     actions=[
                         MessageTemplateAction(
-                            label="查詢"",
+                            label="查詢",
                             text="查和弦"
                         ),
                     ]
@@ -32,7 +32,7 @@ def send_menu_carousel(reply_token):
                     text="輸入和弦名稱，查詢它是由什麼音組成的",
                     actions=[
                         MessageTemplateAction(
-                            label=查詢",
+                            label="查詢",
                             text="查和弦組成音"
                         ),
                     ]
