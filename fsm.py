@@ -42,11 +42,11 @@ class TocMachine():
 
     def is_going_to_chord(self, event):
         text = event.message.text
-        return "查和弦" in text
+        return "和弦" in text and "組成音" not in text
 
     def is_going_to_chordNote(self, event):
         text = event.message.text
-        return "查和弦組成音" in text
+        return "組成音" in text
 
     #on enter
     def on_enter_menu(self, event):
@@ -57,7 +57,7 @@ class TocMachine():
     def on_enter_chord(self, event):
         print("I'm entering chord")
         reply_token = event.reply_token
-        text = "請輸入音符 A~G，可搭配升降記號。我會想辦法告訴你他們可以組成的和弦。"
+        text = "請輸入數個音符（A~G，可搭配升降記號）。我會想辦法告訴你他們可以組成的和弦。"
         send_text_message(reply_token, text)
     
     def on_enter_chordNote(self, event):
