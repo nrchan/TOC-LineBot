@@ -1,4 +1,4 @@
-from notes import containNotes, noteToNumber
+from notes import containNotes, noteToNumber, notesToChord
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel
 
