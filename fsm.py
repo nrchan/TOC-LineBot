@@ -6,7 +6,7 @@ from utils import send_text_message
 class TocMachine():
     def __init__(self):
         self.machine = GraphMachine(
-            model=self, 
+            model=self,
             **{
                 "states":["start","user", "state1", "state2"],
                 "transitions":[

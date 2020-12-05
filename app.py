@@ -13,7 +13,6 @@ from utils import send_text_message
 
 load_dotenv()
 
-
 machine = TocMachine()
 
 app = Flask(__name__, static_url_path="")
@@ -32,7 +31,7 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 parser = WebhookParser(channel_secret)
 
-
+"""
 @app.route("/callback", methods=["POST"])
 def callback():
     signature = request.headers["X-Line-Signature"]
@@ -58,7 +57,7 @@ def callback():
         )
 
     return "OK"
-
+"""
 
 @app.route("/webhook", methods=["POST"])
 def webhook_handler():
@@ -85,7 +84,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            send_text_message(event.reply_token, "Not Entering any State")
+            send_text_message(event.reply_token, event.source.userID)
 
     return "OK"
 
