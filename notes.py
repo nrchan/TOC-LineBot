@@ -79,5 +79,9 @@ def notesToChord(noteList):
             if j == len(diffList[i])-1:
                 whichChord = i
                 break
-    return noteList[0] + " " + chordList[whichChord]
+    if whichChord < len(chordList):
+        result = noteList[0] + " " + chordList[whichChord]
+    else:
+        result = "找...找不到"
+    return result
     
