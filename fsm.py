@@ -81,5 +81,5 @@ class TocMachine():
     def on_enter_chordResult(self, event):
         print("I'm entering chordResult")
         reply_token = event.reply_token
-        text = self.notes
+        text = self.notes[0]
         send_text_message(reply_token, text)
