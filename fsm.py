@@ -30,5 +30,4 @@ class TocMachine():
     def on_enter_menu(self, event):
         print("I'm entering menu")
         reply_token = event.reply_token
-        send_text_message(reply_token, "選擇想要的功能吧！😉")
         send_menu_carousel(reply_token)
