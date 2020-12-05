@@ -1,6 +1,7 @@
 import re
 
-note = r"[A-G][#|x|bb|b]?"
+noteBB = r"[A-G][#|x|bb|b]?"
+noteB = r"[A-G][#|x|b]?"
 
 noteNumDict = {
     "C"  : 0,
@@ -27,12 +28,35 @@ noteNumDict = {
     "Fx" : 7,
     "G"  : 7,
     "Abb": 7,
+    "G#" : 8,
+    "Ab" : 8,
+    "Gx" : 9,
+    "A"  : 9,
+    "Bbb": 9,
+    "A#" :10,
+    "Bb" :10,
+    "Cbb":10,
+    "Ax" :11,
+    "B"  :11,
+    "Cb" :11,
 }
 
-#convert note to corresponding number, starting from C = 0, B = 12
+#convert note to corresponding number, starting from C = 0, B = 11
 def noteToNumber(note):
     return noteNumDict.get(note, -1)
 
 #return all notes in text
 def containNotes(text):
-    return re.findall(note, text)
+    BB = re.findall(noteBB, text)
+    B = re.findall(noteB, text)
+    result = []
+    for i in range(max(len(BB), len(B))):
+        if(BB[i] == B[i]):
+            result.append(BB[i])
+        elif(BB[i][0] == B[i][0]):
+            result.append(BB[i])
+            BB.remove(BB[i])
+        else:
+            result.append(B[i])
+            B.remove(B[i])
+    return result
