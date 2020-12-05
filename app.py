@@ -58,13 +58,14 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine[user_id].advance(event)
         if response == False:
-            send_text_message(event.reply_token, f"Not Entering any State")
+            send_text_message(event.reply_token, f"可先前往「選單」查看各項功能 😉")
 
     return "OK"
 
 
 @app.route("/show-fsm", methods=["GET"])
 def show_fsm():
+    machine = TocMachine()
     machine.get_graph().draw("fsm.png", prog="dot", format="png")
     return send_file("fsm.png", mimetype="image/png")
 
