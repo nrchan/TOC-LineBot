@@ -62,7 +62,7 @@ def notesToChord(noteList):
         numList.append(noteToNumber(noteList[i]))
     for i in range(1, len(numList)):
         if numList[i] < numList[0]:
-            numList[i] = (numList[i] + 12) % 12
+            numList[i] = numList[i] + 12
     diff = []
     for i in range(1, len(numList)):
         diff.append(numList[i] - numList[i-1])
@@ -79,7 +79,7 @@ def notesToChord(noteList):
             if j == len(diffList[i])-1:
                 whichChord = i
                 break
-    if whichChord < len(chordList):
+    if whichChord < len(chordList) and whichChord > -1:
         result = noteList[0] + " " + chordList[whichChord]
     else:
         result = "找...找不到"
