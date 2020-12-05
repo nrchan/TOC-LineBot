@@ -12,7 +12,7 @@ class TocMachine():
                 "transitions":[
                     {
                         "trigger": "advance",
-                        "source": "start",
+                        "source": "*",
                         "dest": "menu",
                         "conditions": "is_going_to_menu",
                     },
@@ -35,6 +35,7 @@ class TocMachine():
             }
         )
 
+    #condition
     def is_going_to_menu(self, event):
         text = event.message.text
         return "選單" in text
@@ -47,7 +48,20 @@ class TocMachine():
         text = event.message.text
         return "查和弦組成音" in text
 
+    #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
         reply_token = event.reply_token
         send_menu_carousel(reply_token)
+
+    def on_enter_chord(self, event):
+        print("I'm entering chord")
+        reply_token = event.reply_token
+        text = "請輸入音符 A~G，可搭配升降記號。我會想辦法告訴你他們可以組成的和弦。"
+        send_text_message(reply_token, text)
+    
+    def on_enter_chordNote(self, event):
+        print("I'm entering chordNote")
+        reply_token = event.reply_token
+        text = "請輸入和弦的英文名稱，我會想辦法告訴你他是由什麼音符組成的。"
+        send_text_message(reply_token, text)
