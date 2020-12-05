@@ -1,6 +1,6 @@
 import re
 
-noteBB = r"[A-G][#|x|b{2}]?"
+noteBB = r"[A-G][#|x|b{2}]{0,1}"
 noteB = r"[A-G][#|x|b]?"
 
 noteNumDict = {
@@ -41,6 +41,10 @@ noteNumDict = {
     "Cb" :11,
 }
 
+diffChordDict = {
+    [4,3] : "Major",
+}
+
 #convert note to corresponding number, starting from C = 0, B = 11
 def noteToNumber(note):
     return noteNumDict.get(note, -1)
@@ -69,4 +73,7 @@ def notesToChord(noteList):
     for i in range(1, len(numList)):
         if numList[i] < numList[0]:
             numList[i] = (numList[i] + 12) % 12
+    diffList = []
+    for i in range(1, len(numList)):
+        diffList.append(numList[i] - numList[i-1])
     
