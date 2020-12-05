@@ -1,6 +1,6 @@
 import re
 
-noteBB = r"[A-G][#|x|bb]?"
+noteBB = r"[A-G][#|x|b{2}]?"
 noteB = r"[A-G][#|x|b]?"
 
 noteNumDict = {
@@ -66,3 +66,7 @@ def notesToChord(noteList):
     numList = []
     for i in noteList:
         numList.append(noteToNumber(noteList[i]))
+    for i in range(1, len(numList)):
+        if numList[i] < numList[0]:
+            numList[i] = (numList[i] + 12) % 12
+    
