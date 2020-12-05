@@ -53,7 +53,7 @@ def webhook_handler():
         user_id = event.source.user_id
         if user_id not in machine:
             machine[user_id] = TocMachine()
-            machine[user_id].to_menu(event)
+            machine[user_id].to_menu()
 
         print(f"\nFSM STATE: {machine[user_id].state}")
         print(f"REQUEST BODY: \n{body}")
