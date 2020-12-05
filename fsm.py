@@ -12,6 +12,12 @@ class TocMachine():
                 "transitions":[
                     {
                         "trigger": "advance",
+                        "source": "start",
+                        "dest": "menu",
+                        "conditions": "is_going_to_menu",
+                    },
+                    {
+                        "trigger": "advance",
                         "source": "user",
                         "dest": "state1",
                         "conditions": "is_going_to_state1",
@@ -23,14 +29,14 @@ class TocMachine():
             }
         )
 
+    def is_going_to_menu(self, event):
+        text = event.message.text
+        return "主選單" == text
+
     def on_enter_menu(self, event):
         print("I'm entering menu")
         reply_token = event.reply_token
         send_menu_carousel(reply_token)
-
-    def is_going_to_state1(self, event):
-        text = event.message.text
-        return text.lower() == "go to state1"
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
