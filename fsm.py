@@ -8,8 +8,14 @@ class TocMachine():
         self.machine = GraphMachine(
             model=self, 
             **{
-                "states":["user", "state1", "state2"],
+                "states":["start","user", "state1", "state2"],
                 "transitions":[
+                    {
+                        "trigger": "advance",
+                        "source": "start",
+                        "dest": "user",
+                        "conditions": "is_going_to_user",
+                    },
                     {
                         "trigger": "advance",
                         "source": "user",
@@ -22,14 +28,18 @@ class TocMachine():
                         "dest": "state2",
                         "conditions": "is_going_to_state2",
                     },
-                    {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
+                    {"trigger": "go_back", "source": ["state1", "state2"], "dest": "start"},
                 ],
-                "initial":"user",
+                "initial":"start",
                 "auto_transitions":False,
                 "show_conditions":True,
             }
         )
 
+    def is_going_to_user(self, event):
+        text = event.message.text
+        return text.lower() == "go to user"
+    
     def is_going_to_state1(self, event):
         text = event.message.text
         return text.lower() == "go to state1"
@@ -37,6 +47,13 @@ class TocMachine():
     def is_going_to_state2(self, event):
         text = event.message.text
         return text.lower() == "go to state2"
+
+    def on_enter_user(self, event):
+        print("I'm entering user")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "Trigger user")
+        self.go_back()
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
