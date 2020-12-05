@@ -3,9 +3,32 @@ from transitions.extensions import GraphMachine
 from utils import send_text_message
 
 
-class TocMachine(GraphMachine):
-    def __init__(self, **machine_configs):
-        self.machine = GraphMachine(model=self, **machine_configs)
+class TocMachine():
+    def __init__(self):
+        self.machine = GraphMachine(
+            model=self, 
+            **{
+                "states":["user", "state1", "state2"],
+                "transitions":[
+                    {
+                        "trigger": "advance",
+                        "source": "user",
+                        "dest": "state1",
+                        "conditions": "is_going_to_state1",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "user",
+                        "dest": "state2",
+                        "conditions": "is_going_to_state2",
+                    },
+                    {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
+                ],
+                "initial":"user",
+                "auto_transitions":False,
+                "show_conditions":True,
+            }
+        )
 
     def is_going_to_state1(self, event):
         text = event.message.text
