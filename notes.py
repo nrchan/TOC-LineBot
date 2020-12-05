@@ -53,6 +53,8 @@ def containNotes(text):
     for i in range(len(B)):
         if(BB[i] == B[i]):
             result.append(BB[i])
+        elif(BB[i][0:1] == B[i][0:1]):
+            result.append(BB[i])
         else:
             result.append(B[i])
             B.remove(B[i])
