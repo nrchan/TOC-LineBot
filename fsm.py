@@ -58,7 +58,7 @@ class TocMachine():
     def is_going_to_chordResult(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        return self.notes is not None
+        return len(self.notes) is not 0
 
     #on enter
     def on_enter_menu(self, event):
