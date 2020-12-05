@@ -6,6 +6,13 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
+def webhook_parser(webhook):
+    event = webhook["events"][0]
+    reply_token = event["replyToken"]
+    user_id = event["source"]["userId"]
+    message = event["message"]["text"]
+
+    return reply_token, user_id, message
 
 def send_text_message(reply_token, text):
     line_bot_api = LineBotApi(channel_access_token)

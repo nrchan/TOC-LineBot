@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 
 from flask import Flask, jsonify, request, abort, send_file
 from dotenv import load_dotenv
@@ -9,11 +10,11 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from transitions.extensions import GraphMachine
 
 from fsm import TocMachine
-from utils import send_text_message
+from utils import send_text_message, webhook_parser
 
 load_dotenv()
 
-machine = TocMachine()
+machines = {}
 
 app = Flask(__name__, static_url_path="")
 
@@ -61,6 +62,19 @@ def callback():
 
 @app.route("/webhook", methods=["POST"])
 def webhook_handler():
+    webhook = json.loads(request.data.decode("utf-8"))
+    reply_token, user_id, message = webhook_parser(webhook)
+    print(reply_token, user_id, message)
+
+    if user_id not in machines:
+        machines[user_id] = TocMachine()
+
+    response = machines[user_id].advance(message, reply_token)
+    if response == False:
+        send_text_message(reply_token, user_id)
+
+    return jsonify({})
+    """
     signature = request.headers["X-Line-Signature"]
     # get request body as text
     body = request.get_data(as_text=True)
@@ -86,13 +100,14 @@ def webhook_handler():
         if response == False:
             send_text_message(event.reply_token, event.source.user)
     return "OK"
+    """
 
-
+"""
 @app.route("/show-fsm", methods=["GET"])
 def show_fsm():
-    machine.get_graph().draw("fsm.png", prog="dot", format="png")
+    machines.get_graph().draw("fsm.png", prog="dot", format="png")
     return send_file("fsm.png", mimetype="image/png")
-
+"""
 
 if __name__ == "__main__":
     port = os.environ.get("PORT", 8000)
