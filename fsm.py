@@ -35,6 +35,12 @@ class TocMachine():
                         "dest": "chordResult",
                         "conditions": "is_going_to_chordResult",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "chordResult",
+                        "dest": "chordResult",
+                        "conditions": "is_going_to_chordResult",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
