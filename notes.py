@@ -61,6 +61,12 @@ diffList = [
     [4,4],
     [4,4,2],
     [4,4,3],
+    #6
+    [4,3,2],
+    #sus4
+    [5,2],
+    #sus2
+    [2,5],
 ]
 
 chordList = [
@@ -78,6 +84,9 @@ chordList = [
     ["Augmented"],
     ["Augmented 7"],
     ["Augmented Major 7"],
+    ["6"],
+    ["Suspended 4"],
+    ["Suspended 2"],
 ]
 
 #convert note to corresponding number, starting from C = 0, B = 11
