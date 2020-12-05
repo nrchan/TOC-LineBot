@@ -58,7 +58,7 @@ def containNotes(text):
 
 def notesToChord(noteList):
     numList = []
-    for i in range(noteList):
+    for i in range(len(noteList)):
         numList.append(noteToNumber(noteList[i]))
     for i in range(1, len(numList)):
         if numList[i] < numList[0]:
