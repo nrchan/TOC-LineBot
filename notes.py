@@ -49,6 +49,8 @@ def noteToNumber(note):
 def containNotes(text):
     BB = re.findall(noteBB, text)
     B = re.findall(noteB, text)
+    print(BB)
+    print(B)
     result = []
     for i in range(len(B)):
         if(BB[i] == B[i]):
@@ -59,3 +61,8 @@ def containNotes(text):
             result.append(B[i])
             B.remove(B[i])
     return result
+
+def notesToChord(noteList):
+    numList = []
+    for i in noteList:
+        numList.append(noteToNumber(noteList[i]))
