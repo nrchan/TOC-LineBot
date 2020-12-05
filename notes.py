@@ -42,10 +42,20 @@ noteNumDict = {
 
 diffList = [
     [4,3],
+    [4,3,4],
+    [4,3,4,3],
+    [3,4],
+    [3,4,3],
+    [3,4,4],
 ]
 
 chordList = [
-    "Major"
+    ["Major"],
+    ["Major 7"],
+    ["Major 9"],
+    ["Minor"],
+    ["Minor 7"],
+    ["Minor Major 7"],
 ]
 
 #convert note to corresponding number, starting from C = 0, B = 11
@@ -80,7 +90,7 @@ def notesToChord(noteList):
                 whichChord = i
                 break
     if whichChord < len(chordList) and whichChord > -1:
-        result = noteList[0] + " " + chordList[whichChord]
+        result = noteList[0] + " " + chordList[whichChord][0]
     else:
         result = "找...找不到"
     return result
