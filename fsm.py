@@ -88,8 +88,6 @@ class TocMachine():
     def is_going_to_chordNoteRootnote(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        if len(self.notes) is not 0:
-            self.notes = self.notes[0]
         return len(self.notes) is not 0
 
     def is_going_to_chordNoteType(self, event):
