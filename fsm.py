@@ -1,4 +1,4 @@
-from notes import containNotes, noteToNumber, notesToChord
+from notes import containNotes, noteToNumber, notesToChord, chordList
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel, send_chord, send_not_found
 
@@ -6,6 +6,7 @@ from utils import send_text_message, send_menu_carousel, send_chord, send_not_fo
 class TocMachine():
     def __init__(self):
         self.notes = []
+        self.chord = -1
         self.machine = GraphMachine(
             model=self, 
             **{
@@ -86,7 +87,18 @@ class TocMachine():
         return len(self.notes) is not 0
 
     def is_going_to_chordNoteType(self, event):
-        return False
+        self.chord = -1
+        text = event.message.text
+        text = text.strip()
+        for i in range(len(chordList)):
+            for j in range(len(chordList[i])):
+                if text == chordList[i][j]:
+                    self.chord = i
+                    break
+            else:
+                continue
+            break
+        return self.chord is not -1
 
     #on enter
     def on_enter_menu(self, event):
@@ -120,4 +132,10 @@ class TocMachine():
         print("I'm entering chordNoteRootnote")
         reply_token = event.reply_token
         text = "請輸入和弦「種類」。"
+        send_text_message(reply_token, text)
+
+    def on_enter_chordNoteType(self, event):
+        print("I'm entering chordNoteType")
+        reply_token = event.reply_token
+        text = "找不到..."
         send_text_message(reply_token, text)
