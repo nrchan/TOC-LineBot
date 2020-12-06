@@ -54,6 +54,12 @@ class TocMachine():
                         "dest": "chordNoteType",
                         "conditions": "is_going_to_chordNoteType",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "chordNoteType",
+                        "dest": "chordNote",
+                        "conditions": "is_going_back_to_chordNote",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -99,6 +105,10 @@ class TocMachine():
                 continue
             break
         return self.chord is not -1
+
+    def is_going_back_to_chordNote(self, event):
+        text = event.message.text
+        return "重來" in text or "再來" in text or "重查" in text
 
     #on enter
     def on_enter_menu(self, event):
