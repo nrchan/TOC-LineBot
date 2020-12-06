@@ -9,7 +9,7 @@ class TocMachine():
         self.machine = GraphMachine(
             model=self, 
             **{
-                "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote"],
+                "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -47,6 +47,12 @@ class TocMachine():
                         "dest": "chordNoteRootnote",
                         "conditions": "is_going_to_chordNoteRootnote",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "chordNoteRootnote",
+                        "dest": "chordNoteType",
+                        "conditions": "is_going_to_chordNoteType",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -75,8 +81,12 @@ class TocMachine():
     def is_going_to_chordNoteRootnote(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        self.notes = self.notes[0]
+        if len(self.notes) is not 0:
+            self.notes = self.notes[0]
         return len(self.notes) is not 0
+
+    def is_going_to_chordNoteType(self, event):
+        return False
 
     #on enter
     def on_enter_menu(self, event):
