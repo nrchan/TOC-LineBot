@@ -1,6 +1,6 @@
 from notes import containNotes, noteToNumber, notesToChord
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_menu_carousel
+from utils import send_text_message, send_menu_carousel, send_chord
 
 
 class TocMachine():
@@ -88,5 +88,8 @@ class TocMachine():
         print("I'm entering chordResult")
         reply_token = event.reply_token
         print(self.notes)
-        text = notesToChord(self.notes)
-        send_text_message(reply_token, text)
+        root_note, whichChord = notesToChord(self.notes)
+        if whichChord > -1:
+            send_chord(reply_token, root_note, whichChord)
+        else:
+            send_text_message(reply_token, "找...找不到")
