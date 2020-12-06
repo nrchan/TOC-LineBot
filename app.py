@@ -8,7 +8,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 from fsm import TocMachine
-from utils import send_text_message, send_go_to_menu_button
+from utils import send_text_message, send_go_to_menu_button, send_chord
 
 load_dotenv()
 machine = {}
@@ -58,7 +58,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine[user_id].advance(event)
         if response == False:
-            send_go_to_menu_button(event.reply_token)
+            send_chord(event.reply_token)
 
     return "OK"
 
