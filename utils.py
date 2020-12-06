@@ -69,97 +69,101 @@ def send_go_to_menu_button(reply_token):
 def send_chord(reply_token):
     line_bot_api.reply_message(reply_token, 
         {
-            "type": "bubble",
-            "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                {
-                    "type": "text",
-                    "text": "找到的和弦...",
-                    "weight": "bold",
-                    "color": "#1DB446",
-                    "size": "sm"
-                },
-                {
-                    "type": "text",
-                    "text": "C Major",
-                    "weight": "bold",
-                    "size": "xxl",
-                    "margin": "md"
-                },
-                {
-                    "type": "text",
-                    "text": "C 大和弦",
-                    "size": "xs",
-                    "wrap": "true",
-                    "color": "#999999"
-                },
-                {
-                    "type": "separator",
-                    "margin": "xxl"
-                },
-                {
+            "type": "flex",
+            "altText": "和弦查詢結果",
+            "contents": {
+                "type": "bubble",
+                "body": {
                     "type": "box",
                     "layout": "vertical",
-                    "margin": "xxl",
-                    "spacing": "sm",
                     "contents": [
                     {
                         "type": "text",
-                        "text": "組成音",
-                        "size": "sm",
-                        "weight": "bold"
+                        "text": "找到的和弦...",
+                        "weight": "bold",
+                        "color": "#1DB446",
+                        "size": "sm"
                     },
                     {
                         "type": "text",
-                        "text": "C、E、G"
+                        "text": "C Major",
+                        "weight": "bold",
+                        "size": "xxl",
+                        "margin": "md"
+                    },
+                    {
+                        "type": "text",
+                        "text": "C 大和弦",
+                        "size": "xs",
+                        "wrap": "true",
+                        "color": "#999999"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "margin": "xxl",
+                        "spacing": "sm",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": "組成音",
+                            "size": "sm",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "text",
+                            "text": "C、E、G"
+                        }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": "和弦代號",
+                            "size": "sm",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "text",
+                            "text": "C Maj"
+                        }
+                        ],
+                        "spacing": "sm",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "text",
+                        "text": "你可以直接在此繼續查詢，或是回到「選單」。",
+                        "size": "sm",
+                        "wrap": "true",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "回到「選單」",
+                        "text": "選單"
+                        },
+                        "height": "sm"
                     }
                     ]
                 },
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                    {
-                        "type": "text",
-                        "text": "和弦代號",
-                        "size": "sm",
-                        "weight": "bold"
-                    },
-                    {
-                        "type": "text",
-                        "text": "C Maj"
+                "styles": {
+                    "footer": {
+                    "separator": "true"
                     }
-                    ],
-                    "spacing": "sm",
-                    "margin": "xxl"
-                },
-                {
-                    "type": "separator",
-                    "margin": "xxl"
-                },
-                {
-                    "type": "text",
-                    "text": "你可以直接在此繼續查詢，或是回到「選單」。",
-                    "size": "sm",
-                    "wrap": "true",
-                    "margin": "xxl"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "message",
-                    "label": "回到「選單」",
-                    "text": "選單"
-                    },
-                    "height": "sm"
-                }
-                ]
-            },
-            "styles": {
-                "footer": {
-                "separator": "true"
                 }
             }
         }
