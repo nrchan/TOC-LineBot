@@ -115,7 +115,7 @@ def notesToChord(noteList):
             continue
         for j in range(len(diffList[i])):
             if diff[j] != diffList[i][j]:
-                continue
+                break
             if j == len(diffList[i])-1:
                 whichChord = i
                 break
