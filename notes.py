@@ -84,7 +84,7 @@ chordList = [
     ["Augmented", "增和弦", "aug", "+"],
     ["Augmented 7", "增屬七和弦", "aug7", "+7"],
     ["Augmented Major 7", "增大七和弦", "augM7", "+Δ7", "M7(#5)"],
-    ["6", "六和弦", "6"],
+    ["Sixth", "大六和弦", "6", "M6"],
     ["Suspended 4", "掛留四和弦", "sus4", "sus"],
     ["Suspended 2", "掛留二和弦", "sus2"],
 ]
