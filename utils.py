@@ -92,7 +92,7 @@ def send_chord(reply_token):
                     "type": "text",
                     "text": "C 大和弦",
                     "size": "xs",
-                    "wrap": true,
+                    "wrap": "true",
                     "color": "#999999"
                 },
                 {
@@ -143,7 +143,7 @@ def send_chord(reply_token):
                     "type": "text",
                     "text": "你可以直接在此繼續查詢，或是回到「選單」。",
                     "size": "sm",
-                    "wrap": true,
+                    "wrap": "true",
                     "margin": "xxl"
                 },
                 {
@@ -159,7 +159,7 @@ def send_chord(reply_token):
             },
             "styles": {
                 "footer": {
-                "separator": true
+                "separator": "true"
                 }
             }
         }
