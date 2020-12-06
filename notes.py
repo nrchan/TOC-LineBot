@@ -70,7 +70,7 @@ diffList = [
 ]
 
 chordList = [
-    ["Major", "大和弦"],
+    ["Major", "大和弦", ""],
     ["Major 7", "大七和弦", "Maj", "Maj7", "M7", "Δ7"],
     ["Major 9", "大九和弦", "9", "Maj9", "M9", "Δ9"],
     ["Minor", "小和弦", "m", "-"],
@@ -84,7 +84,7 @@ chordList = [
     ["Augmented", "增和弦", "aug", "+"],
     ["Augmented 7", "增屬七和弦", "aug7", "+7"],
     ["Augmented Major 7", "增大七和弦", "augM7", "+Δ7", "M7(#5)"],
-    ["6", "大六和弦"],
+    ["6", "六和弦", "6"],
     ["Suspended 4", "掛留四和弦", "sus4", "sus"],
     ["Suspended 2", "掛留二和弦", "sus2"],
 ]

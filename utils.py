@@ -69,11 +69,8 @@ def send_go_to_menu_button(reply_token):
 
 def send_chord(reply_token, root_note, whichChord):
     symbol = ""
-    if len(chordList[whichChord]) <= 2:
-        symbol = "(無)"
-    else:
-        for i in range(2, len(chordList[whichChord])):
-            symbol = str(symbol) + root_note + chordList[whichChord][i] + ("、" if i is not len(chordList[whichChord])-1 else "")
+    for i in range(2, len(chordList[whichChord])):
+        symbol = str(symbol) + root_note + chordList[whichChord][i] + ("、" if i is not len(chordList[whichChord])-1 else "")
     line_bot_api.reply_message(reply_token, 
         FlexSendMessage(
             "查詢和弦結果",
