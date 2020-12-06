@@ -70,6 +70,7 @@ def send_go_to_menu_button(reply_token):
 def send_chord(reply_token):
     line_bot_api.reply_message(reply_token, 
         FlexSendMessage(
+            "查詢和弦結果",
             {
                 "type": "bubble",
                 "body": {
@@ -94,7 +95,7 @@ def send_chord(reply_token):
                         "type": "text",
                         "text": "C 大和弦",
                         "size": "xs",
-                        "wrap": "true",
+                        "wrap": true,
                         "color": "#999999"
                     },
                     {
@@ -145,7 +146,7 @@ def send_chord(reply_token):
                         "type": "text",
                         "text": "你可以直接在此繼續查詢，或是回到「選單」。",
                         "size": "sm",
-                        "wrap": "true",
+                        "wrap": true,
                         "margin": "xxl"
                     },
                     {
@@ -161,7 +162,7 @@ def send_chord(reply_token):
                 },
                 "styles": {
                     "footer": {
-                    "separator": "true"
+                    "separator": true
                     }
                 }
             }
