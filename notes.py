@@ -104,7 +104,7 @@ def notesToChord(noteList):
     for i in range(1, len(numList)):
         if numList[i] < numList[0]:
             numList[i] = numList[i] + 12
-    numList[1:].sort()
+    numList = numList[0:1] + sorted(numList[1:])
     diff = []
     for i in range(1, len(numList)):
         diff.append(numList[i] - numList[i-1])
