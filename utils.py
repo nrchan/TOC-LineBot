@@ -68,6 +68,7 @@ def send_go_to_menu_button(reply_token):
     return "OK"
 
 def send_chord(reply_token, root_note, whichChord):
+    symbol = ""
     if len(chordList[whichChord]) <= 2:
         symbol = "(無)"
     else:
@@ -91,14 +92,14 @@ def send_chord(reply_token, root_note, whichChord):
                     },
                     {
                         "type": "text",
-                        "text": root_note + " " + chordList[whichChord][0],
+                        "text": str(root_note) + " " + str(chordList[whichChord][0]),
                         "weight": "bold",
                         "size": "xxl",
                         "margin": "md"
                     },
                     {
                         "type": "text",
-                        "text": root_note + " " + chordList[whichChord][1],
+                        "text": str(root_note) + " " + str(chordList[whichChord][1]),
                         "size": "xs",
                         "wrap": True,
                         "color": "#999999"
