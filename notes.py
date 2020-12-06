@@ -157,7 +157,7 @@ def notesToChord(noteList):
 
 def chordToNote(noteList, whichChord):
     rootnote = noteToNumber(noteList[0])
-    sevenList = [noteList[0]]
+    sevenList = [notesToSevenNum(noteList[0])]
     for i in range(len(diffSeven[whichChord])):
         rootnote = (rootnote + diffSeven[whichChord][i])%7
         sevenList.append(rootnote)
