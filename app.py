@@ -58,7 +58,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine[user_id].advance(event)
         if response == False:
-            send_chord(event.reply_token)
+            send_go_to_menu_button(event.reply_token)
 
     return "OK"
 
