@@ -137,5 +137,5 @@ class TocMachine():
     def on_enter_chordNoteType(self, event):
         print("I'm entering chordNoteType")
         reply_token = event.reply_token
-        text = "找不到..."
+        text = chordList[self.chord][0]
         send_text_message(reply_token, text)
