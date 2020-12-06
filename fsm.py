@@ -1,4 +1,4 @@
-from notes import containNotes, noteToNumber, notesToChord, chordList
+from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel, send_chord, send_not_found
 
@@ -145,5 +145,5 @@ class TocMachine():
     def on_enter_chordNoteType(self, event):
         print("I'm entering chordNoteType")
         reply_token = event.reply_token
-        text = chordList[self.chord][0]
+        text = chordToNote(self.notes, self.chord)
         send_text_message(reply_token, text)

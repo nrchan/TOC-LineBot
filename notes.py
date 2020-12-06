@@ -125,4 +125,12 @@ def notesToChord(noteList):
     if whichChord >= len(chordList) or whichChord <= -1:
         whichChord = -1
     return noteList[0], whichChord
+
+def chordToNote(noteList, whichChord):
+    rootnote = noteToNumber(noteList[0])
+    notes = str(rootnote)
+    for i in range(len(diffList[whichChord])):
+        rootnote = rootnote + diffList[whichChord][i]
+        notes = notes + " " + str(rootnote)
+    return notes
     
