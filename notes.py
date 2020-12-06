@@ -113,9 +113,9 @@ diffSeven = [
     #6
     [2,2,1],
     #sus4
-    [4,1],
+    [3,1],
     #sus2
-    [1,4],
+    [1,3],
 ]
 
 #convert note to corresponding number, starting from C = 0, B = 11
