@@ -3,7 +3,7 @@ import json
 
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
-
+from notes import chordList
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 line_bot_api = LineBotApi(channel_access_token)
@@ -67,7 +67,12 @@ def send_go_to_menu_button(reply_token):
     line_bot_api.reply_message(reply_token, confirm_template)
     return "OK"
 
-def send_chord(reply_token):
+def send_chord(reply_token, root_note, whichChord):
+    if len(chordList[whichChord]) <= 2:
+        symbol = "(無)"
+    else:
+        for i in range(2, len(chordList[whichChord])):
+            symbol = str(symbol) + root_note + " " + chordList[whichChord][i] + "\n"
     line_bot_api.reply_message(reply_token, 
         FlexSendMessage(
             "查詢和弦結果",
@@ -86,14 +91,14 @@ def send_chord(reply_token):
                     },
                     {
                         "type": "text",
-                        "text": "C Major",
+                        "text": root_note + " " + chordList[whichChord][0],
                         "weight": "bold",
                         "size": "xxl",
                         "margin": "md"
                     },
                     {
                         "type": "text",
-                        "text": "C 大和弦",
+                        "text": root_note + " " + chordList[whichChord][1],
                         "size": "xs",
                         "wrap": True,
                         "color": "#999999"
@@ -101,24 +106,6 @@ def send_chord(reply_token):
                     {
                         "type": "separator",
                         "margin": "xxl"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "margin": "xxl",
-                        "spacing": "sm",
-                        "contents": [
-                        {
-                            "type": "text",
-                            "text": "組成音",
-                            "size": "sm",
-                            "weight": "bold"
-                        },
-                        {
-                            "type": "text",
-                            "text": "C、E、G"
-                        }
-                        ]
                     },
                     {
                         "type": "box",
@@ -132,7 +119,7 @@ def send_chord(reply_token):
                         },
                         {
                             "type": "text",
-                            "text": "C Maj"
+                            "text": symbol
                         }
                         ],
                         "spacing": "sm",
