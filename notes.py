@@ -119,6 +119,8 @@ def notesToChord(noteList):
             if j == len(diffList[i])-1:
                 whichChord = i
                 break
+    
+    print("whichChord = " + whichChord + " diff = " + str(diff))
     if whichChord < len(chordList) and whichChord > -1:
         result = noteList[0] + " " + chordList[whichChord][0]
     else:
