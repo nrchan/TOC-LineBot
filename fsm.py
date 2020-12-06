@@ -1,6 +1,6 @@
 from notes import containNotes, noteToNumber, notesToChord
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_menu_carousel, send_chord
+from utils import send_text_message, send_menu_carousel, send_chord, send_not_found
 
 
 class TocMachine():
@@ -92,4 +92,4 @@ class TocMachine():
         if whichChord > -1:
             send_chord(reply_token, root_note, whichChord)
         else:
-            send_text_message(reply_token, "找...找不到")
+            send_not_found(reply_token)
