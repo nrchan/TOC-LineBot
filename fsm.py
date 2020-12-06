@@ -60,6 +60,12 @@ class TocMachine():
                         "dest": "chordNote",
                         "conditions": "is_going_back_to_chordNote",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "chordNoteType",
+                        "dest": "chordNoteType",
+                        "conditions": "is_going_to_chordNoteType",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
