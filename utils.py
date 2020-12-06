@@ -2,7 +2,7 @@ import os
 import json
 
 from linebot import LineBotApi, WebhookParser
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
+from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
 
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
@@ -68,11 +68,9 @@ def send_go_to_menu_button(reply_token):
     return "OK"
 
 def send_chord(reply_token):
-    line_bot_api.reply_message(reply_token, json.loads(
-        {
-            "type": "flex",
-            "altText": "和弦查詢結果",
-            "contents": {
+    line_bot_api.reply_message(reply_token, 
+        FlexSendMessage(
+            {
                 "type": "bubble",
                 "body": {
                     "type": "box",
@@ -167,6 +165,6 @@ def send_chord(reply_token):
                     }
                 }
             }
-        })
+        )
     )
     return "OK"
