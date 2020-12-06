@@ -89,6 +89,35 @@ chordList = [
     ["Suspended 2", "掛留二和弦", "sus2"],
 ]
 
+diffSeven = [
+    #major
+    [2,2],
+    [2,2,2],
+    [2,2,2,2],
+    #minor
+    [2,2],
+    [2,2,2],
+    [2,2,2],
+    [2,2,2,2],
+    #domiant
+    [2,2,2],
+    [2,2,2,2],
+    #half dim
+    [2,2,2],
+    #dim
+    [2,2,2],
+    #aug
+    [2,2],
+    [2,2,2],
+    [2,2,2],
+    #6
+    [2,2,1],
+    #sus4
+    [4,1],
+    #sus2
+    [1,4],
+]
+
 #convert note to corresponding number, starting from C = 0, B = 11
 def noteToNumber(note):
     return noteNumDict.get(note, -1)
@@ -128,9 +157,72 @@ def notesToChord(noteList):
 
 def chordToNote(noteList, whichChord):
     rootnote = noteToNumber(noteList[0])
-    notes = str(rootnote)
+    sevenList = [notesToSevenNum(rootnote)]
+    for i in range(len(diffSeven[whichChord])):
+        rootnote = (rootnote + diffSeven[whichChord][i])%7
+        sevenList.append(rootnote)
+    rootnote = noteToNumber(noteList[0])
+    notes = [rootnote]
     for i in range(len(diffList[whichChord])):
         rootnote = rootnote + diffList[whichChord][i]
-        notes = notes + " " + str(rootnote)
+        notes.append(rootnote)
+    result = str(sevenNumToNote(sevenList[0], notes[0]))
+    for i in range(1,len(notes)):
+        result = result + "、" + str(sevenNumToNote(sevenList[i], notes[i]))
     return notes
     
+def notesToSevenNum(note):
+    note = note[0]
+    return {
+        "C" : 0,
+        "D" : 1,
+        "E" : 2,
+        "F" : 3,
+        "G" : 4,
+        "A" : 5,
+        "B" : 6,
+    }.get(note, -1)
+
+def sevenNumToNote(seven, note):
+    if seven == 0:
+        if   note == 0: return "C"
+        elif note == 1: return "C#"
+        elif note == 2: return "Cx"
+        elif note ==11: return "Cb"
+        elif note ==10: return "Cbb"
+    elif seven == 1:
+        if   note == 2: return "D"
+        elif note == 3: return "D#"
+        elif note == 1: return "Dx"
+        elif note == 1: return "Db"
+        elif note == 0: return "Dbb"
+    elif seven == 2:
+        if   note == 4: return "E"
+        elif note == 5: return "E#"
+        elif note == 6: return "Ex"
+        elif note == 3: return "Eb"
+        elif note == 2: return "Ebb"
+    elif seven == 3:
+        if   note == 5: return "F"
+        elif note == 6: return "F#"
+        elif note == 7: return "Fx"
+        elif note == 4: return "Fb"
+        elif note == 3: return "Fbb"
+    elif seven == 4:
+        if   note == 7: return "G"
+        elif note == 8: return "G#"
+        elif note == 9: return "Gx"
+        elif note == 6: return "Gb"
+        elif note == 5: return "Gbb"
+    elif seven == 5:
+        if   note == 9: return "A"
+        elif note ==10: return "A#"
+        elif note ==11: return "Ax"
+        elif note == 8: return "Ab"
+        elif note == 7: return "Abb"
+    elif seven == 6:
+        if   note ==11: return "B"
+        elif note == 0: return "B#"
+        elif note == 1: return "Bx"
+        elif note ==10: return "Bb"
+        elif note == 9: return "Bbb"
