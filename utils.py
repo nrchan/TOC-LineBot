@@ -1,4 +1,5 @@
 import os
+import json
 
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
@@ -67,7 +68,7 @@ def send_go_to_menu_button(reply_token):
     return "OK"
 
 def send_chord(reply_token):
-    line_bot_api.reply_message(reply_token, 
+    line_bot_api.reply_message(reply_token, json.loads(
         {
             "type": "flex",
             "altText": "和弦查詢結果",
@@ -166,6 +167,6 @@ def send_chord(reply_token):
                     }
                 }
             }
-        }
+        })
     )
     return "OK"
