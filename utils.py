@@ -154,3 +154,104 @@ def send_chord(reply_token, root_note, whichChord):
         )
     )
     return "OK"
+
+def send_not_found(reply_token):
+    line_bot_api.reply_message(reply_token, 
+        FlexSendMessage(
+            "找...找不到",
+            {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": "找到的和弦...",
+                        "weight": "bold",
+                        "color": "#1DB446",
+                        "size": "sm"
+                    },
+                    {
+                        "type": "text",
+                        "text": "找...找不到",
+                        "weight": "bold",
+                        "size": "xxl",
+                        "margin": "md"
+                    },
+                    {
+                        "type": "text",
+                        "text": "OAO",
+                        "size": "xs",
+                        "wrap": True,
+                        "color": "#999999"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": "增加找到的機率？！",
+                            "size": "sm",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "text",
+                            "text": "→ 音符用大寫字母 A 到 G",
+                            "wrap": True,
+                        },
+                        {
+                            "type": "text",
+                            "text": "→ 升降記號擺在音符後面（A#、Bb）",
+                            "wrap": True,
+                        },
+                        {
+                            "type": "text",
+                            "text": "→ 音符由低音排到高音",
+                            "wrap": True,
+                        },
+                        {
+                            "type": "text",
+                            "text": "→ 加不加入空白或頓號是沒關係的，不過還是可以適度分隔音符，特別是降記號的部分",
+                            "wrap": True,
+                        },
+                        ],
+                        "spacing": "sm",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "text",
+                        "text": "你可以直接在此繼續查詢，或是回到「選單」。",
+                        "size": "sm",
+                        "wrap": True,
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "回到「選單」",
+                        "text": "選單"
+                        },
+                        "height": "sm"
+                    }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                    "separator": True
+                    }
+                }
+            }
+        )
+    )
+    return "OK"
