@@ -9,7 +9,7 @@ class TocMachine():
         self.machine = GraphMachine(
             model=self, 
             **{
-                "states":["start", "menu", "chord", "chordResult", "chordNote"],
+                "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -41,6 +41,12 @@ class TocMachine():
                         "dest": "chordResult",
                         "conditions": "is_going_to_chordResult",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "chordNote",
+                        "dest": "chordNoteRootnote",
+                        "conditions": "is_going_to_chordNoteRootnote",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -66,6 +72,12 @@ class TocMachine():
         self.notes = containNotes(text)
         return len(self.notes) is not 0
 
+    def is_going_to_chordNoteRootnote(self, event):
+        text = event.message.text
+        self.notes = containNotes(text)
+        self.notes = self.notes[0]
+        return len(self.notes) is not 0
+
     #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
@@ -81,7 +93,7 @@ class TocMachine():
     def on_enter_chordNote(self, event):
         print("I'm entering chordNote")
         reply_token = event.reply_token
-        text = "請輸入和弦的英文名稱，我會想辦法告訴你他是由什麼音符組成的。"
+        text = "請先輸入和弦的「根音」。"
         send_text_message(reply_token, text)
 
     def on_enter_chordResult(self, event):
@@ -93,3 +105,9 @@ class TocMachine():
             send_chord(reply_token, root_note, whichChord)
         else:
             send_not_found(reply_token)
+
+    def on_enter_chordNoteRootnote(self, event):
+        print("I'm entering chordNoteRootnote")
+        reply_token = event.reply_token
+        text = "請輸入和弦「種類」。"
+        send_text_message(reply_token, text)
