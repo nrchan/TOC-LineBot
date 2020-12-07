@@ -194,7 +194,7 @@ def sevenNumToNote(seven, note):
     elif seven == 1:
         if   note == 2: return "D"
         elif note == 3: return "D#"
-        elif note == 1: return "Dx"
+        elif note == 4: return "Dx"
         elif note == 1: return "Db"
         elif note == 0: return "Dbb"
     elif seven == 2:
