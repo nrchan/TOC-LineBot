@@ -89,6 +89,26 @@ chordList = [
     ["Suspended 2", "掛留二和弦", "sus2"],
 ]
 
+chordListAlt = [
+    ["major", "大調", "三和弦", "大三和弦", "3", "大三", "大3"],
+    ["major 7", "七和弦", "大七", "maj7"],
+    ["major 9", "九和弦", "大九", "maj9"],
+    ["minor", "小調", "小三和弦", "小三", "小3"],
+    ["minor 7", "小七", "小7"],
+    ["minor major 7", "mmaj7", "mm7", "-大7", "小Δ7", "小大七", "小大7"],
+    ["minor 9", "小九", "小9"],
+    ["dominant 7", "屬七", "屬7", "七", "7"],
+    ["dominant 9", "屬九", "屬9", "九", "9"],
+    ["half diminished 7", "半減七", "半減7", "小七降五", "小7降5", "小七b5"],
+    ["diminished 7", "diminish 7", "diminish", "減七", "減7"],
+    ["augmented", "增", "增三", "增3"],
+    ["augmented 7", "增七和弦", "增屬七", "增七", "增7", "增屬7"],
+    ["augmented major 7", "增大七", "增大7", "大7升5", "大七升五"],
+    ["sixth", "大六", "大6", "六", "Δ6"],
+    ["suspended 4", "suspended", "suspend 4", "suspend", "掛留四", "掛留4", "掛四", "掛4"],
+    ["suspended 2", "suspend 2", "掛留二", "掛留2", "掛二", "掛2"],
+]
+
 diffSeven = [
     #major
     [2,2],

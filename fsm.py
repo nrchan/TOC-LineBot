@@ -1,4 +1,4 @@
-from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote
+from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note
 
@@ -114,6 +114,15 @@ class TocMachine():
             else:
                 continue
             break
+        if self.chord is -1:
+            for i in range(len(chordListAlt)):
+                for j in range(len(chordListAlt[i])):
+                    if str(text).lower() == chordListAlt[i][j]:
+                        self.chord = i
+                        break
+                else:
+                    continue
+                break
         return self.chord is not -1
 
     def is_going_back_to_chordNote(self, event):
