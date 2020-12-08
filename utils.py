@@ -21,7 +21,7 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="和弦名稱",
                     text="輸入音符名稱，\n查詢它們能組成哪個和弦。",
-                    thumbnail_image_url="https://lh3.googleusercontent.com/vN8XGBLZLmI7R2f1xY8Sp1Zu_qoJdDSkb7I-pvY04NUJ_Z8U0cAYVaRRH6hJfa0eiw3qMYV9kmvP6xhR-KtrfS74SCV1s-vum7PjoX7Q44yquFB58-NXqARlCbk05_I3bVuzckhdSFz-vI_Fpzfo3WIcnWOkRNNquDXYs6EBEob0KnGUm8gCyaptr4qEK3pO2-YLcYfvDEJhZBfr7iJVTAICaL64H5-eujLGq0RToYybu6B-jhOEpd8jNDZeolvXQLqXjfG6aI6kkNRtA7lFLCBTtrbc0_aN01TFq-ESQGQ27LBKGCB1DyPMKkVuXzJoQ0k-kg-6Bgj_UijC9nzooqrxpaMzZm_Peq_0hQKDRz8utdThO8GJta1ORi_2fDhfK9ft23CwhugdS0r2SJj1Og-wpsqbWDc6x844-20edEHYs4F02kPehXcol_Ue3wVdvy53P_WfyngezCdLIPQrUJqkolNPwmnqJO5QyTNs9EMCC2WnCo4FQopWqNeP0KFHa6cVSHfT0BhPI9hjwISI5SH6CFe--VTIW9YFmBo_lcwe8e2BT3adHF2kr--ULhVGimEcHHdK6ZM4J4Psi93xY6lWuMGONBxxPL42GIXY1OKyQrlrEkb4152zfqb50NYd4FfbehJ9wSnvvwZ61RW0662x3nA1x4Z63NiJjrrj-MPz0VosqhFHGkeLaCUQ=w640-h384-no?authuser=2",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/haIKfpovbWl9BiaFSrHeepSL0d24dVozHgzxr0D5CrSe14qzAYwc1ZUhEEXTO_Zd6djSLqATVHVUbynWvsrRFn02Li3Y8qb3ChzE0V311mqNFcYGFW7ks9Uui-5cQuyWjg9ptaMv4NULn8Sfc17iQ4N59hOR4CHSlvtLd17iNt8DBydfRiN9k8qdeCgzjUuKLBTlYTdmA-DUbskoyv8iBQ6-71lTPFJZOgY-NOSXVWjRfJML-aDUH_pR8beigvmDkjYhF7x0EnS1I6eb18oKfxcTJfy1B8OHPgkRMd5M7MfA0729sYWQ_mSvCaHZsSI8IVDhWJdzSAN78X_yNLzp0Gc17HrzDRcCgsYvWE1ffCVOSt5Fvlb20EkaHu922OD2qz8xLyJiBfe3Ea2VbXtQizjEtSrvdAjWyC8JiO_2Pe6Ig5SuYCP0DwWbvAcLiUabvd8euceWouy30TLuR3Zmd8azbuarcu-IJQ20Dg9hXFm7jrOv6YCzZe72J4JUTL0YS7ZCd8TMQP9iYPllqpnsrDKTAjwVi3I6rlN6wpc-7fPejHmF9UNzqvq53dVs38QLFck0Hc3vDxkqOZJOFtl6miaceEW4YWAYJ3Bo7T-YyocebLixTocq5hDY0yRjBRHlNCbB-cYeaptJf1gI7cImkCR6G1MOajcy0LMe0sinKVxIB56gKTWvtYl6oYAZ=w640-h427-no?authuser=2",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
@@ -32,11 +32,33 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="和弦組成音",
                     text="輸入和弦名稱，\n查詢它是由什麼音符組成的。",
-                    thumbnail_image_url="https://lh3.googleusercontent.com/rNgF3mEDpaxpODit5sMYnWYzJRU30nZ4A8o05IhxSpSxin_qTtf8kD9x16dQMPthJvCyfbwldocqKlaH97XdC1wErJqEH9pP2xwOkRUWNNwTsTU0mK4vmuiB8ndexWV9ZK85-qRLqCxIDCjLFFTgt-Fn5Ggz_ppk5tPJgqMt8s95zfgrutXV_m1l0Z_-uQyiHLyVWlpsyB0zTwCkTl4E2ErN8U3niFW9Xd_RmBAupMfG1sqeYR4LwdbIaykYA45en0Q0YLc-gpyC5tkZffa3bj5_utymySZgqdTL6CJ8n-1UKyFRPS7UY0t4jpWb3e3HYY6Wyz6KRJmqEPORRaIRTaL6iVUOB6dKO_ejK1UiDVwAYBFEfT4SOkNd-hq4aQ85rco87QAFm1vAfbJErZ9YTq5bql2pJG8DoblyY7B5XI59nhC5iPy7Q0s2Q2QrQc4xiBrCAaIRZ5l7EbDxA-I0xcspJrnTVJnDKkPNMdH2is-tZVx10R5M8qj74NFqz0L0U5adA1qXeG9KZRpilXKhLNL4uOhS-FPDp5ESbRLWudh9NXDRQzQdknYnGvtIAwTHKtVsOwnCsXfoyj3I8HnWayOSIsR95_fACJ80TJ22GV3K0t8nahvSnTRLuq2Ns8ziEHeI2vIbcdVQ9x7i86R5HXFPonTi8EjYrAwZDv8SvulxBRUxQDeXthKmUK3h=w640-h384-no?authuser=2",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/RhoIywtAz17h9neSDvC88sHUfjw1ZY553j-6g6SP_VWjpcWJCsTWkaQxhBssCOXkSpW7mRipMVtBmugKpSsVjhgpT79xca2b_kYl6a6xIArK9QVxwkueGoe3e2J_MiQ4m9BnQ26ejepXopsYnFlyfKr-Rs8JyonbjOlEAOoZKUJWza-OYJD5bi5jOs1Nvc_cXQvarpasQ1q9C2s03WsLZKiDOHA1KIQLAqtyvILiQI2zB4BB3r7qKvLoEtJG3z4g-wRLO1mNTRsLa8qkQZl7MXCDk_RjUewWCfDXlGbpsJ3CDEICR_hyETo3ImldGXwtAqTtJ-Wr3fl48NSrjV5PJbFVVdhsv5n41LR6nf5mP3EYzVl_r2EgY45R2J-H_ANEIzTwiNK0YbG3xtEoGzZgEzADYifejPVLEL_T1AtrLU13c9fTae1L9Ns19NWZ1s8LKJgtew7SuEokE-v-XuiFrC4LlA2GeX2FhlXs-1aR2RJcyEUGWnWy9r5S5NGLczON89D4vHl7L3iP3XW1vnNFVypg7OPQKHrQ1ujc7YelEQtRNxDhM7HOlWCe_iIViYXl7SfH_TkY0TATRn6jCrpwk1Xy64ev1EQpEiAjWrOEwyTD_-bFF0EUTb1dmxWh7ftAxsDqPNsN6JmAQm2GafRbrzE3lMFMw9CpODlrHNeChdHoS1uR9_X4Why7nXT2=w640-h426-no?authuser=2",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
                             text="查和弦組成音"
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    title="音階名稱",
+                    text="輸入音符名稱，\n查詢它們能組成哪個音階。",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/1_D9MINB-WoJ41KoGb-oX16SvOzPQJOZcEoqtXP0idOgoRkdKVYJTS4ttjr34QPAzMjus1SjIbra0-9A6-TUcQLB7JbitIN4DfCl35So1b1Ra3f-oNVYqGiXSkd3LocvwNdzdOYlfbVQs0pUdNXV04k-KTtItucn3nVT82guv9ZDDDVF9uKtsO4pXEDz_SB-5rzsE2v-CGfRnJsTWbnH-4aDnuwNc2V1zKEoTtsbtVTEJn0kz7rfbUp0xGP59olRUDq9ptCTKX0w1dczmFFt1mH327H0hBz2c1kJSeLw9_uQ5fSxNRup5bPjrOah5SgcvpxY6msi9QeopE1Kv9mv7rV9dOaOSg8cePCFs_RVKVRoyfl6kvmIpxTp5Mmtcchu9VlBicZ9RELJpctJSI45UTPIEghEAMzu0tzSYiOnmNTb2kkU_bqLE8I5R6CvuL_HV1Zs3-qjSnkgC1Pv5KLKtF1c3rS4fAyrVS5dPggvCkMOewkegXJDfB6f5PqHvgV1LOUT2shLwkmBrtbe3YakzI4WsMDio7w4ylgmKF8NcdErcS6E0dA5ndz-YjVL7TKBLacKcdMKFcKuEUmAIyE-SB3qGCMPO2uYaiaO7GKirX2b-aFFUJgjV2T14TZGNd7iDJiBUWktGvRDZlS9my5KwB7saOfaj_vk2OtqR4Y3u24Xm4lNG6zYQvQIPmoU=w640-h427-no?authuser=2",
+                    actions=[
+                        MessageTemplateAction(
+                            label="查詢",
+                            text="查音階"
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    title="音階組成音",
+                    text="輸入音階名稱，\n查詢它是由什麼音符組成的。",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/O1OvFITs2p4OxD32zYHIDrCd7FYqHiqTZ9z9zzWNf9Yftjaj2KotLYVrE5FWgvS6g21YLdsERIrEWmieMeReG4KVPHxATn4VNhCJDvmwVyLJU5KK-qPSN0VY4wjwOXkqcu4TI6CiiniH13C2JWv3pncRZVWqDMy0VSW8iCHlOkdnj5jr7yYdmxdOmaXsfzOOo5DMqoezONNLNz0odJ-5eQr3aoDOLG7Nt2ov3DN1mR5VCdhH71pkD_Oo6TIRDN4_-ZsunModA7ZPHpS_yl-LY4829bAQ8SgMo9qz4uhpebo1eYandcEmlXoaManT7ZyJBi-M6SvtX1d5BFqNc8vi0n1bfPUQkEts37UwZ61eIQ30fSohEwJ_iIBClkJFnu9xC0ZBoesMlEOg-7Q13GeCe-j7UkgLQvb8Fy6hSygWuQWRzFtc93j8INVjUnWSJDh_UIOoLbbXCJcUhR7ROTZsyrtgTHRsPJOCynDxZasZA7lqzE-duFmLyUt9LTjiRYqS1utqDspUh7ILJA-j7mYx4mRb8F-nEfgK_LYD1lrNKQzLQ9JYugP0xVLBdOcfMr9CZYcPzpeq1aY-A1yCYvkj_K97wZLs6_T5oy0n8MC4BYviQbt1LcrYucFfkMDqFzeN-R1zHWfGOOmLVCLVbcs1w53nkYN8vJLCM9n4Ni4RuSwkK9LYRSD1yyBxxOW3=w640-h424-no?authuser=2",
+                    actions=[
+                        MessageTemplateAction(
+                            label="查詢",
+                            text="查音階組成音"
                         ),
                     ]
                 ),
