@@ -255,3 +255,66 @@ def send_not_found(reply_token):
         )
     )
     return "OK"
+
+def send_chord_note(reply_token, root_note, whichChord, notes):
+    line_bot_api.reply_message(reply_token,
+        FlexSendMessage(
+            "查詢和弦結果",
+            {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": "和弦的組成音...",
+                        "weight": "bold",
+                        "color": "#1DB446",
+                        "size": "sm"
+                    },
+                    {
+                        "type": "text",
+                        "text": notes,
+                        "weight": "bold",
+                        "size": "xxl",
+                        "margin": "md"
+                    },
+                    {
+                        "type": "text",
+                        "text": str(root_note) + " " + str(chordList[whichChord][1]),
+                        "size": "xs",
+                        "wrap": True,
+                        "color": "#999999"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "text",
+                        "text": "你可以直接在此繼續查詢，或是回到「選單」。",
+                        "size": "sm",
+                        "wrap": True,
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "回到「選單」",
+                        "text": "選單"
+                        },
+                        "height": "sm"
+                    }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                    "separator": True
+                    }
+                }
+            }
+        )
+    )
+    return "OK"
