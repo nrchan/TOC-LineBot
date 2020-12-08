@@ -293,7 +293,7 @@ def send_chord_note(reply_token, root_note, whichChord, notes):
                     },
                     {
                         "type": "text",
-                        "text": "你可以直接在此輸入新的和弦根音或以目前根音繼續查詢其他和弦，也可回到「選單」。",
+                        "text": "你可以直接在此輸入新的和弦根音，或以目前根音繼續查詢其他和弦。也可以點擊下方回到「選單」。",
                         "size": "sm",
                         "wrap": True,
                         "margin": "xxl"
