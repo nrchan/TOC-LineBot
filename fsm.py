@@ -10,7 +10,8 @@ class TocMachine():
         self.machine = GraphMachine(
             model=self, 
             **{
-                "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"],
+                "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
+                , "scale", "scaleNote"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -72,6 +73,18 @@ class TocMachine():
                         "dest": "chordNoteRootnote",
                         "conditions": "is_going_to_chordNoteRootnote",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "menu",
+                        "dest": "scale",
+                        "conditions": "is_going_to_scale",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "menu",
+                        "dest": "scaleNote",
+                        "conditions": "is_going_to_scaleNote",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -90,7 +103,7 @@ class TocMachine():
 
     def is_going_to_chordNote(self, event):
         text = event.message.text
-        return "組成音" in text
+        return "和弦" in text and "組成音" in text
 
     def is_going_to_chordResult(self, event):
         text = event.message.text
@@ -128,6 +141,14 @@ class TocMachine():
     def is_going_back_to_chordNote(self, event):
         text = event.message.text
         return "重來" in text or "再來" in text or "重查" in text
+
+    def is_going_to_scale(self, event):
+        text = event.message.text
+        return "音階" in text and "組成音" not in text
+
+    def is_going_to_scaleNote(self, event):
+        text = event.message.text
+        return "音階" in text and "組成音" in text
 
     #on enter
     def on_enter_menu(self, event):
@@ -168,3 +189,15 @@ class TocMachine():
         reply_token = event.reply_token
         text = chordToNote(self.notes, self.chord)
         send_chord_note(reply_token, self.notes[0], self.chord, text)
+
+    def on_enter_scale(self, event):
+        print("I'm entering scale")
+        reply_token = event.reply_token
+        text = "請輸入數個音符（A~G，可搭配升降記號）。我會想辦法告訴你他們可以組成的音階。"
+        send_text_message(reply_token, text)
+    
+    def on_enter_scaleNote(self, event):
+        print("I'm entering scaleNote")
+        reply_token = event.reply_token
+        text = "請先輸入音階的「根音」。"
+        send_text_message(reply_token, text)
