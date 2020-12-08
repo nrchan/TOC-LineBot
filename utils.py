@@ -300,6 +300,7 @@ def send_chord_note(reply_token, root_note, whichChord, notes):
                         "text": notes,
                         "weight": "bold",
                         "size": "xxl",
+                        "wrap": True,
                         "margin": "md"
                     },
                     {
