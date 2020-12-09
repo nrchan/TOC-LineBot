@@ -261,16 +261,21 @@ scaleDiffList = [
     [2,2,1,2,2,1],
     [2,1,2,2,1,2],
     [1,2,2,1,2,2],
+    #two more minor
+    [2,1,2,2,1,3],
+    [2,1,2,2,2,2],
 ]
 
 scaleList = [
-    ["Ionian", "Major"],
+    ["Ionian", "大調"],
     ["Dorian", "Dor."],
     ["Phrygian", "Phry."],
     ["Lydian", "Lyd."],
     ["Mixolydian", "Mixo."],
-    ["Aeolian", "minor"],
+    ["Aeolian", "自然小音階"],
     ["Locrian", "Loc."],
+    ["Harmonic minor", "和聲小音階"],
+    ["Melodic minor", "旋律小音階"],
 ]
 
 def notesToScale(noteList):
