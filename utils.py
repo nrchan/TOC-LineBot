@@ -3,7 +3,7 @@ import json
 
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
-from notes import chordList
+from notes import chordList, scaleList
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 line_bot_api = LineBotApi(channel_access_token)
@@ -317,6 +317,62 @@ def send_chord_note(reply_token, root_note, whichChord, notes):
                     {
                         "type": "text",
                         "text": "你可以直接在此輸入新的和弦根音，或以目前根音繼續查詢其他和弦。也可以點擊下方回到「選單」。",
+                        "size": "sm",
+                        "wrap": True,
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "回到「選單」",
+                        "text": "選單"
+                        },
+                        "height": "sm"
+                    }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                    "separator": True
+                    }
+                }
+            }
+        )
+    )
+    return "OK"
+
+def send_scale(reply_token, root_note, whichScale):
+    line_bot_api.reply_message(reply_token, 
+        FlexSendMessage(
+            "查詢音階結果",
+            {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": "找到的音階...",
+                        "weight": "bold",
+                        "color": "#1DB446",
+                        "size": "sm"
+                    },
+                    {
+                        "type": "text",
+                        "text": str(root_note) + " " + str(scaleList[whichScale][0]),
+                        "weight": "bold",
+                        "size": "xxl",
+                        "margin": "md"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "text",
+                        "text": "你可以直接在此繼續查詢，或是回到「選單」。",
                         "size": "sm",
                         "wrap": True,
                         "margin": "xxl"

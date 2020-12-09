@@ -1,6 +1,6 @@
-from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt
+from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note
+from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale
 
 
 class TocMachine():
@@ -11,7 +11,7 @@ class TocMachine():
             model=self, 
             **{
                 "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
-                , "scale", "scaleNote"],
+                , "scale", "scaleResult", "scaleNote"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -85,6 +85,12 @@ class TocMachine():
                         "dest": "scaleNote",
                         "conditions": "is_going_to_scaleNote",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "scale",
+                        "dest": "scaleResult",
+                        "conditions": "is_going_to_scaleResult",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -150,6 +156,11 @@ class TocMachine():
         text = event.message.text
         return "音階" in text and "組成音" in text
 
+    def is_going_to_scaleResult(self, event):
+        text = event.message.text
+        self.notes = containNotes(text)
+        return len(self.notes) is not 0
+
     #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
@@ -201,3 +212,13 @@ class TocMachine():
         reply_token = event.reply_token
         text = "請先輸入音階的「根音」。"
         send_text_message(reply_token, text)
+
+    def on_enter_scaleResult(self, event):
+        print("I'm entering scaleResult")
+        reply_token = event.reply_token
+        print(self.notes)
+        root_note, whichScale = notesToScale(self.notes)
+        if whichScale > -1:
+            send_scale(reply_token, root_note, whichScale)
+        else:
+            send_not_found(reply_token)

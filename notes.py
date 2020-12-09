@@ -40,6 +40,8 @@ noteNumDict = {
     "Cb" :11,
 }
 
+#chord
+
 diffList = [
     #major
     [4,3],
@@ -247,3 +249,55 @@ def sevenNumToNote(seven, note):
         elif note == 1: return "Bx"
         elif note ==10: return "Bb"
         elif note == 9: return "Bbb"
+
+#scale
+
+scaleDiffList = [
+    #modern modes
+    [2,2,1,2,2,2],
+    [2,1,2,2,2,1],
+    [1,2,2,2,1,2],
+    [2,2,2,1,2,2],
+    [2,2,1,2,2,1],
+    [2,1,2,2,1,2],
+    [1,2,2,1,2,2],
+]
+
+scaleList = [
+    ["Ionian"],
+    ["Dorian"],
+    ["Phrygian"],
+    ["Lydian"],
+    ["Mixolydian"],
+    ["Aeolian"],
+    ["Locrian"],
+]
+
+def notesToScale(noteList):
+    numList = []
+    for i in range(len(noteList)):
+        numList.append(noteToNumber(noteList[i]))
+    for i in range(1, len(numList)):
+        if numList[i] < numList[0]:
+            numList[i] = numList[i] + 12
+    numList = numList[0:1] + sorted(numList[1:])
+    diff = []
+    for i in range(1, len(numList)):
+        diff.append(numList[i] - numList[i-1])
+    whichScale = -100
+    for i in range(len(scaleDiffList)):
+        if whichScale != -100:
+            break
+        if len(diff) != len(scaleDiffList[i]):
+            continue
+        for j in range(len(scaleDiffList[i])):
+            if diff[j] != scaleDiffList[i][j]:
+                break
+            if j == len(scaleDiffList[i])-1:
+                whichScale = i
+                break
+    
+    print("whichScale = " + str(whichScale) + " diff = " + str(diff))
+    if whichScale >= len(scaleList) or whichScale <= -1:
+        whichScale = -1
+    return noteList[0], whichScale
