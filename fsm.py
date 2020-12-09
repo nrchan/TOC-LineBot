@@ -91,6 +91,12 @@ class TocMachine():
                         "dest": "scaleResult",
                         "conditions": "is_going_to_scaleResult",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleResult",
+                        "dest": "scaleResult",
+                        "conditions": "is_going_to_scaleResult",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
