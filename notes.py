@@ -264,13 +264,13 @@ scaleDiffList = [
 ]
 
 scaleList = [
-    ["Ionian"],
-    ["Dorian"],
-    ["Phrygian"],
-    ["Lydian"],
-    ["Mixolydian"],
-    ["Aeolian"],
-    ["Locrian"],
+    ["Ionian", "Major"],
+    ["Dorian", "Dor."],
+    ["Phrygian", "Phry."],
+    ["Lydian", "Lyd."],
+    ["Mixolydian", "Mixo."],
+    ["Aeolian", "minor"],
+    ["Locrian", "Loc."],
 ]
 
 def notesToScale(noteList):

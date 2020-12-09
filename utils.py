@@ -367,6 +367,13 @@ def send_scale(reply_token, root_note, whichScale):
                         "margin": "md"
                     },
                     {
+                        "type": "text",
+                        "text": str(root_note) + " " + str(scaleList[whichScale][1]),
+                        "size": "xs",
+                        "wrap": True,
+                        "color": "#999999"
+                    },
+                    {
                         "type": "separator",
                         "margin": "xxl"
                     },
