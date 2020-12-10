@@ -281,6 +281,12 @@ scaleDiffList = [
     #diminished
     [1,2,1,2,1,2,1],
     [2,1,2,1,2,1,2],
+    #pentatonic
+    [2,2,3,2],
+    [2,3,2,3],
+    [3,2,3,2],
+    [2,3,2,2],
+    [3,2,2,3],
 ]
 
 scaleList = [
@@ -306,6 +312,11 @@ scaleList = [
     ["Altered bb7", "alt. bb7"],
     ["Diminished (Half-Whole)", "半全音階"],
     ["Diminished (Whole-Half)", "全半音階"],
+    ["Major pentatonic", "宮調式"],
+    ["Egyptian", "商調式"],
+    ["", "角調式"],
+    ["", "徵調式"],
+    ["Minor pentatonic", "羽調式"],
 ]
 
 def notesToScale(noteList):

@@ -113,6 +113,7 @@ def send_chord(reply_token, root_note, whichChord):
                         "type": "text",
                         "text": str(root_note) + " " + str(chordList[whichChord][0]),
                         "weight": "bold",
+                        "wrap": True,
                         "size": "xxl",
                         "margin": "md"
                     },
@@ -364,6 +365,7 @@ def send_scale(reply_token, root_note, whichScale):
                         "text": str(root_note) + " " + str(scaleList[whichScale][0]),
                         "weight": "bold",
                         "size": "xxl",
+                        "wrap": True,
                         "margin": "md"
                     },
                     {
