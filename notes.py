@@ -264,6 +264,23 @@ scaleDiffList = [
     #two more minor
     [2,1,2,2,1,3],
     [2,1,2,2,2,2],
+    #modern modes with accidentals
+    [2,1,3,1,2,1],
+    [1,2,2,2,2,1],
+    [2,1,2,1,2,2],
+    [1,2,2,1,3,1],
+    [3,1,2,1,2,2],
+    [2,2,2,1,2,1],
+    [2,2,1,2,1,2],
+    [1,3,1,2,1,2],
+    #whole tone
+    [2,2,2,2,2],
+    #altered
+    [1,2,1,2,2,2],
+    [1,2,1,2,2,1],
+    #diminished
+    [1,2,1,2,1,2,1],
+    [2,1,2,1,2,1,2],
 ]
 
 scaleList = [
@@ -276,6 +293,19 @@ scaleList = [
     ["Locrian", "Loc."],
     ["Harmonic minor", "和聲小音階"],
     ["Melodic minor", "旋律小音階"],
+    ["Dorian #4", "Dor. #4"],
+    ["Dorain b2", "Dor. b2"],
+    ["Locrian 2", "Loc. 2"],
+    ["Locrian 6", "Loc. 6"],
+    ["Lydian #9", "Lyd. #9"],
+    ["Lydian b7", "Lyd. b7"],
+    ["Mixolydian b6", "Mixo. b6"],
+    ["Mixolydian b2, b6", "Mixo. b2 b6"],
+    ["Whole tone", "全音音階"],
+    ["Altered", "alt."],
+    ["Altered bb7", "alt. bb7"],
+    ["Diminished (Half-Whole)", "半全音階"],
+    ["Diminished (Whole-Half)", "全半音階"],
 ]
 
 def notesToScale(noteList):
