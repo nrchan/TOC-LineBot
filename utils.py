@@ -21,8 +21,7 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="和弦名稱",
                     text="輸入音符名稱，\n查詢它們能組成哪個和弦。",
-                    #thumbnail_image_url="https://lh3.googleusercontent.com/haIKfpovbWl9BiaFSrHeepSL0d24dVozHgzxr0D5CrSe14qzAYwc1ZUhEEXTO_Zd6djSLqATVHVUbynWvsrRFn02Li3Y8qb3ChzE0V311mqNFcYGFW7ks9Uui-5cQuyWjg9ptaMv4NULn8Sfc17iQ4N59hOR4CHSlvtLd17iNt8DBydfRiN9k8qdeCgzjUuKLBTlYTdmA-DUbskoyv8iBQ6-71lTPFJZOgY-NOSXVWjRfJML-aDUH_pR8beigvmDkjYhF7x0EnS1I6eb18oKfxcTJfy1B8OHPgkRMd5M7MfA0729sYWQ_mSvCaHZsSI8IVDhWJdzSAN78X_yNLzp0Gc17HrzDRcCgsYvWE1ffCVOSt5Fvlb20EkaHu922OD2qz8xLyJiBfe3Ea2VbXtQizjEtSrvdAjWyC8JiO_2Pe6Ig5SuYCP0DwWbvAcLiUabvd8euceWouy30TLuR3Zmd8azbuarcu-IJQ20Dg9hXFm7jrOv6YCzZe72J4JUTL0YS7ZCd8TMQP9iYPllqpnsrDKTAjwVi3I6rlN6wpc-7fPejHmF9UNzqvq53dVs38QLFck0Hc3vDxkqOZJOFtl6miaceEW4YWAYJ3Bo7T-YyocebLixTocq5hDY0yRjBRHlNCbB-cYeaptJf1gI7cImkCR6G1MOajcy0LMe0sinKVxIB56gKTWvtYl6oYAZ=w640-h427-no?authuser=2",
-                    thumbnail_image_url="https://unsplash.com/photos/yI4I3OrpB0I",
+                    thumbnail_image_url="https://photos.google.com/share/AF1QipPllKsedCdM0RakqreHUytemn4UdNej_i9Y3YbSabgV3VxHIEBEtVk5tXR03Tyevw/photo/AF1QipPqyD_65Uq7RXNj1UdX_BcjzMV7YTmUp5u45Fqi?key=NjFadnJsdGtMY2dqVkZRU0dpY3ZOOUNrX0tFcUlB",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
