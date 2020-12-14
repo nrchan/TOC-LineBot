@@ -320,13 +320,13 @@ scaleList = [
 ]
 
 scaleListAlt = [
-    ["major", "maj", "ion.", "ion"],
-    ["dorian", "dor.", "dor"],
-    ["phrygian", "phry.", "phry"],
-    ["lydian", "lyd.", "lyd"],
-    ["mixolydian", "mixo.", "mixo"],
-    ["aeolian", "natural minor", "natural", "小調", "aeo.", "aeo", "自然小調", "自然"],
-    ["locrian", "loc.", "loc"],
+    ["major", "maj", "ion.", "ion", "艾奧尼安調式", "艾奧尼安"],
+    ["dorian", "dor.", "dor", "多利安調式", "多利安"],
+    ["phrygian", "phry.", "phry", "弗利吉安調式", "弗利吉安"],
+    ["lydian", "lyd.", "lyd", "利地安調式", "利地安"],
+    ["mixolydian", "mixo.", "mixo", "米克索利地安調式", "米克索利地安", "混和利地安調式", "混和利地安"],
+    ["aeolian", "natural minor", "natural", "小調", "aeo.", "aeo", "自然小調", "自然", "伊奧利安調式", "伊奧利安"],
+    ["locrian", "loc.", "loc", "洛克利安調式", "洛克利安"],
     ["harmonic minor", "harmonic", "和聲小調", "和聲"],
     ["melodic minor", "melodic", "旋律小調", "旋律"],
     ["dorian #4", "dor. #4", "dor #4"],
