@@ -319,6 +319,36 @@ scaleList = [
     ["Minor pentatonic", "羽調式"],
 ]
 
+scaleListAlt = [
+    ["Ionian", "大調"],
+    ["Dorian", "Dor."],
+    ["Phrygian", "Phry."],
+    ["Lydian", "Lyd."],
+    ["Mixolydian", "Mixo."],
+    ["Aeolian", "自然小音階"],
+    ["Locrian", "Loc."],
+    ["Harmonic minor", "和聲小音階"],
+    ["Melodic minor", "旋律小音階"],
+    ["Dorian #4", "Dor. #4"],
+    ["Dorain b2", "Dor. b2"],
+    ["Locrian 2", "Loc. 2"],
+    ["Locrian 6", "Loc. 6"],
+    ["Lydian #9", "Lyd. #9"],
+    ["Lydian b7", "Lyd. b7"],
+    ["Mixolydian b6", "Mixo. b6"],
+    ["Mixolydian b2, b6", "Mixo. b2 b6"],
+    ["Whole tone", "全音音階"],
+    ["Altered", "alt."],
+    ["Altered bb7", "alt. bb7"],
+    ["Diminished (Half-Whole)", "半全音階"],
+    ["Diminished (Whole-Half)", "全半音階"],
+    ["Major pentatonic", "宮調式"],
+    ["Egyptian", "商調式"],
+    ["", "角調式"],
+    ["", "徵調式"],
+    ["Minor pentatonic", "羽調式"],
+]
+
 def notesToScale(noteList):
     numList = []
     for i in range(len(noteList)):
