@@ -349,6 +349,43 @@ scaleListAlt = [
     ["Minor pentatonic", "羽調式"],
 ]
 
+scaleDiffSeven = [
+#modern modes
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    #two more minor
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    #modern modes with accidentals
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    #whole tone
+    [1,1,1,1,1],
+    #altered
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    #diminished
+    [0,1,1,1,1,1,1],
+    [1,0,2,0,2,0,1],
+    #pentatonic
+    [1,1,2,1],
+    [1,2,1,2],
+    [2,1,2,1],
+    [1,2,1,1],
+    [2,1,1,2],
+]
+
 def notesToScale(noteList):
     numList = []
     for i in range(len(noteList)):
@@ -377,3 +414,20 @@ def notesToScale(noteList):
     if whichScale >= len(scaleList) or whichScale <= -1:
         whichScale = -1
     return noteList[0], whichScale
+
+def scaleToNote(noteList, whichScale):
+    sevenRootnote = notesToSevenNum(noteList[0])
+    sevenList = [sevenRootnote]
+    for i in range(len(scaleDiffSeven[whichScale])):
+        sevenRootnote = (sevenRootnote + scaleDiffSeven[whichScale][i])%7
+        sevenList.append(sevenRootnote)
+    rootnote = noteToNumber(noteList[0])
+    notes = [rootnote]
+    for i in range(len(scaleDiffList[whichScale])):
+        rootnote = (rootnote + scaleDiffList[whichScale][i])%12
+        notes.append(rootnote)
+    print("whichScale = " + str(whichScale) + " seven = " + str(sevenList) + " notesnum = " + str(notes))
+    result = str(sevenNumToNote(sevenList[0], notes[0]))
+    for i in range(1,len(notes)):
+        result = result + "、" + str(sevenNumToNote(sevenList[i], notes[i]))
+    return result
