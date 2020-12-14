@@ -1,6 +1,6 @@
-from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList, scaleListAlt, scaleToNote, send_scale_note
+from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList, scaleListAlt, scaleToNote
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale
+from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale, send_scale_note
 
 
 class TocMachine():
