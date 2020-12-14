@@ -1,4 +1,4 @@
-from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList, scaleListAlt
+from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList, scaleListAlt, scaleToNote
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale
 
@@ -276,7 +276,8 @@ class TocMachine():
         text = "請輸入音階「種類」。"
         send_text_message(reply_token, text)
 
-    def on_enter_chordNoteType(self, event):
+    def on_enter_scaleNoteType(self, event):
         print("I'm entering chordNoteType")
         reply_token = event.reply_token
-        text = chordToNote(self.notes, self.chord)
+        text = scaleToNote(self.notes, self.scale)
+        send_scale_note(reply_token, self.notes[0], self.scale, text)

@@ -406,3 +406,67 @@ def send_scale(reply_token, root_note, whichScale):
         )
     )
     return "OK"
+
+def send_scale_note(reply_token, root_note, whichScale, notes):
+    line_bot_api.reply_message(reply_token,
+        FlexSendMessage(
+            "查詢音階結果",
+            {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": "音階的組成音...",
+                        "weight": "bold",
+                        "color": "#1DB446",
+                        "size": "sm"
+                    },
+                    {
+                        "type": "text",
+                        "text": notes,
+                        "weight": "bold",
+                        "size": "xxl",
+                        "wrap": True,
+                        "margin": "md"
+                    },
+                    {
+                        "type": "text",
+                        "text": str(root_note) + " " + str(scaleList[whichScale][1]),
+                        "size": "xs",
+                        "wrap": True,
+                        "color": "#999999"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "text",
+                        "text": "你可以直接在此輸入新的音階根音，或以目前根音繼續查詢其他音階。也可以點擊下方回到「選單」。",
+                        "size": "sm",
+                        "wrap": True,
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "回到「選單」",
+                        "text": "選單"
+                        },
+                        "height": "sm"
+                    }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                    "separator": True
+                    }
+                }
+            }
+        )
+    )
+    return "OK"
