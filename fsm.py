@@ -110,6 +110,24 @@ class TocMachine():
                         "dest": "scaleNoteType",
                         "conditions": "is_going_to_scaleNoteType",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNoteType",
+                        "dest": "scaleNote",
+                        "conditions": "is_going_back_to_scaleNote",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNoteType",
+                        "dest": "scaleNoteType",
+                        "conditions": "is_going_to_scaleNoteType",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNoteType",
+                        "dest": "scaleNoteRootnote",
+                        "conditions": "is_going_to_scaleNoteRootnote",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -207,6 +225,10 @@ class TocMachine():
                     continue
                 break
         return self.scale is not -1
+
+    def is_going_back_to_scaleNote(self, event):
+        text = event.message.text
+        return "重來" in text or "再來" in text or "重查" in text
 
     #on enter
     def on_enter_menu(self, event):
