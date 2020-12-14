@@ -21,13 +21,13 @@ class TocMachine():
                     },
                     {
                         "trigger": "advance",
-                        "source": "menu",
+                        "source": "*",
                         "dest": "chord",
                         "conditions": "is_going_to_chord",
                     },
                     {
                         "trigger": "advance",
-                        "source": "menu",
+                        "source": "*",
                         "dest": "chordNote",
                         "conditions": "is_going_to_chordNote",
                     },
@@ -75,13 +75,13 @@ class TocMachine():
                     },
                     {
                         "trigger": "advance",
-                        "source": "menu",
+                        "source": "*",
                         "dest": "scale",
                         "conditions": "is_going_to_scale",
                     },
                     {
                         "trigger": "advance",
-                        "source": "menu",
+                        "source": "*",
                         "dest": "scaleNote",
                         "conditions": "is_going_to_scaleNote",
                     },
