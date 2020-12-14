@@ -1,4 +1,4 @@
-from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale
+from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale
 
@@ -7,11 +7,12 @@ class TocMachine():
     def __init__(self):
         self.notes = []
         self.chord = -1
+        self.scale = -1
         self.machine = GraphMachine(
             model=self, 
             **{
                 "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
-                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote"],
+                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote", "scaleNoteType"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -103,6 +104,12 @@ class TocMachine():
                         "dest": "scaleNoteRootnote",
                         "conditions": "is_going_to_scaleNoteRootnote",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNoteRootnote",
+                        "dest": "scaleNoteType",
+                        "conditions": "is_going_to_scaleNoteType",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -177,6 +184,29 @@ class TocMachine():
         text = event.message.text
         self.notes = containNotes(text)
         return len(self.notes) is not 0
+
+    def is_going_to_scaleNoteType(self, event):
+        self.scale = -1
+        text = event.message.text
+        text = text.strip()
+        for i in range(len(scaleList)):
+            for j in range(len(scaleList[i])):
+                if text == scaleList[i][j]:
+                    self.chord = i
+                    break
+            else:
+                continue
+            break
+        if self.chord is -1:
+            for i in range(len(chordListAlt)):
+                for j in range(len(chordListAlt[i])):
+                    if str(text).lower() == chordListAlt[i][j]:
+                        self.chord = i
+                        break
+                else:
+                    continue
+                break
+        return self.chord is not -1
 
     #on enter
     def on_enter_menu(self, event):
