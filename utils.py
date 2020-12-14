@@ -21,7 +21,7 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="和弦名稱",
                     text="輸入音符名稱，\n查詢它們能組成哪個和弦。",
-                    thumbnail_image_url="https://photos.google.com/share/AF1QipPllKsedCdM0RakqreHUytemn4UdNej_i9Y3YbSabgV3VxHIEBEtVk5tXR03Tyevw/photo/AF1QipPqyD_65Uq7RXNj1UdX_BcjzMV7YTmUp5u45Fqi?key=NjFadnJsdGtMY2dqVkZRU0dpY3ZOOUNrX0tFcUlB",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3fDYPTuUWEr3gCzNRi03e3Zz8D_TcM8uqPlMsML3oheMeU8YZ0NczCSgCshJGr3EDContWiVbuPHFmzunhqVupRrvjwBNpTMQ9_wLYWjFBNfuh5ppJUFhMs4Zof7c6tj-jYMHn90GcgpS2BLln9foE=w640-h424-no",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
@@ -32,7 +32,7 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="和弦組成音",
                     text="輸入和弦名稱，\n查詢它是由什麼音符組成的。",
-                    thumbnail_image_url="https://lh3.googleusercontent.com/RhoIywtAz17h9neSDvC88sHUfjw1ZY553j-6g6SP_VWjpcWJCsTWkaQxhBssCOXkSpW7mRipMVtBmugKpSsVjhgpT79xca2b_kYl6a6xIArK9QVxwkueGoe3e2J_MiQ4m9BnQ26ejepXopsYnFlyfKr-Rs8JyonbjOlEAOoZKUJWza-OYJD5bi5jOs1Nvc_cXQvarpasQ1q9C2s03WsLZKiDOHA1KIQLAqtyvILiQI2zB4BB3r7qKvLoEtJG3z4g-wRLO1mNTRsLa8qkQZl7MXCDk_RjUewWCfDXlGbpsJ3CDEICR_hyETo3ImldGXwtAqTtJ-Wr3fl48NSrjV5PJbFVVdhsv5n41LR6nf5mP3EYzVl_r2EgY45R2J-H_ANEIzTwiNK0YbG3xtEoGzZgEzADYifejPVLEL_T1AtrLU13c9fTae1L9Ns19NWZ1s8LKJgtew7SuEokE-v-XuiFrC4LlA2GeX2FhlXs-1aR2RJcyEUGWnWy9r5S5NGLczON89D4vHl7L3iP3XW1vnNFVypg7OPQKHrQ1ujc7YelEQtRNxDhM7HOlWCe_iIViYXl7SfH_TkY0TATRn6jCrpwk1Xy64ev1EQpEiAjWrOEwyTD_-bFF0EUTb1dmxWh7ftAxsDqPNsN6JmAQm2GafRbrzE3lMFMw9CpODlrHNeChdHoS1uR9_X4Why7nXT2=w640-h426-no?authuser=2",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3e3KEAfiuly_yOk8-A4ruQA_ska8PNCKCyDEWWI5zEj8xA20CDthHGLBD6YYVYvfbQnp2xi5xH7iJs7Vx-Bj3AZU6gTtWsLEDDRfL1m7UdAiFKPoY_OTPN33GFGbP0v_8djnmpYbuIBCpsAeD3VgLI=w640-h427-no",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
@@ -43,7 +43,7 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="音階名稱",
                     text="輸入音符名稱，\n查詢它們能組成哪個音階。",
-                    thumbnail_image_url="https://lh3.googleusercontent.com/1_D9MINB-WoJ41KoGb-oX16SvOzPQJOZcEoqtXP0idOgoRkdKVYJTS4ttjr34QPAzMjus1SjIbra0-9A6-TUcQLB7JbitIN4DfCl35So1b1Ra3f-oNVYqGiXSkd3LocvwNdzdOYlfbVQs0pUdNXV04k-KTtItucn3nVT82guv9ZDDDVF9uKtsO4pXEDz_SB-5rzsE2v-CGfRnJsTWbnH-4aDnuwNc2V1zKEoTtsbtVTEJn0kz7rfbUp0xGP59olRUDq9ptCTKX0w1dczmFFt1mH327H0hBz2c1kJSeLw9_uQ5fSxNRup5bPjrOah5SgcvpxY6msi9QeopE1Kv9mv7rV9dOaOSg8cePCFs_RVKVRoyfl6kvmIpxTp5Mmtcchu9VlBicZ9RELJpctJSI45UTPIEghEAMzu0tzSYiOnmNTb2kkU_bqLE8I5R6CvuL_HV1Zs3-qjSnkgC1Pv5KLKtF1c3rS4fAyrVS5dPggvCkMOewkegXJDfB6f5PqHvgV1LOUT2shLwkmBrtbe3YakzI4WsMDio7w4ylgmKF8NcdErcS6E0dA5ndz-YjVL7TKBLacKcdMKFcKuEUmAIyE-SB3qGCMPO2uYaiaO7GKirX2b-aFFUJgjV2T14TZGNd7iDJiBUWktGvRDZlS9my5KwB7saOfaj_vk2OtqR4Y3u24Xm4lNG6zYQvQIPmoU=w640-h427-no?authuser=2",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3e9Hc2L-DP-jkWjvJdR05dBIgRetl97uVp7hBbsdy2QLorC2Uqwtk8XELrdhkcgRcxI_C6dwe4q4yGqyRWKnT8A3qQajYdvLoF5yTcnwEogAoUE6EBq7JflzNOr6zFES-53A0EqKDrxDV7vitQ4rdY=w640-h426-no",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
@@ -54,7 +54,7 @@ def send_menu_carousel(reply_token):
                 CarouselColumn(
                     title="音階組成音",
                     text="輸入音階名稱，\n查詢它是由什麼音符組成的。",
-                    thumbnail_image_url="https://lh3.googleusercontent.com/O1OvFITs2p4OxD32zYHIDrCd7FYqHiqTZ9z9zzWNf9Yftjaj2KotLYVrE5FWgvS6g21YLdsERIrEWmieMeReG4KVPHxATn4VNhCJDvmwVyLJU5KK-qPSN0VY4wjwOXkqcu4TI6CiiniH13C2JWv3pncRZVWqDMy0VSW8iCHlOkdnj5jr7yYdmxdOmaXsfzOOo5DMqoezONNLNz0odJ-5eQr3aoDOLG7Nt2ov3DN1mR5VCdhH71pkD_Oo6TIRDN4_-ZsunModA7ZPHpS_yl-LY4829bAQ8SgMo9qz4uhpebo1eYandcEmlXoaManT7ZyJBi-M6SvtX1d5BFqNc8vi0n1bfPUQkEts37UwZ61eIQ30fSohEwJ_iIBClkJFnu9xC0ZBoesMlEOg-7Q13GeCe-j7UkgLQvb8Fy6hSygWuQWRzFtc93j8INVjUnWSJDh_UIOoLbbXCJcUhR7ROTZsyrtgTHRsPJOCynDxZasZA7lqzE-duFmLyUt9LTjiRYqS1utqDspUh7ILJA-j7mYx4mRb8F-nEfgK_LYD1lrNKQzLQ9JYugP0xVLBdOcfMr9CZYcPzpeq1aY-A1yCYvkj_K97wZLs6_T5oy0n8MC4BYviQbt1LcrYucFfkMDqFzeN-R1zHWfGOOmLVCLVbcs1w53nkYN8vJLCM9n4Ni4RuSwkK9LYRSD1yyBxxOW3=w640-h424-no?authuser=2",
+                    thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3fNrIahKLEUxHhV_zQBqDH8XUIx_Wg0bdlCGb4dSypatImBndP9viXi_rzxc2Wa1tB8APwureSFN1huiZHUh4m-Da_TszEKtJq0HqlgiOeQrZnvWHo5agtaUGpekWftAc-qKd8RrR1hLQyP33idsh8=w640-h427-no",
                     actions=[
                         MessageTemplateAction(
                             label="查詢",
