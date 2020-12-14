@@ -11,7 +11,7 @@ class TocMachine():
             model=self, 
             **{
                 "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
-                , "scale", "scaleResult", "scaleNote"],
+                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -97,6 +97,12 @@ class TocMachine():
                         "dest": "scaleResult",
                         "conditions": "is_going_to_scaleResult",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNote",
+                        "dest": "scaleNoteRootnote",
+                        "conditions": "is_going_to_scaleNoteRootnote",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -167,6 +173,11 @@ class TocMachine():
         self.notes = containNotes(text)
         return len(self.notes) is not 0
 
+    def is_going_to_scaleNoteRootnote(self, event):
+        text = event.message.text
+        self.notes = containNotes(text)
+        return len(self.notes) is not 0
+
     #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
@@ -228,3 +239,9 @@ class TocMachine():
             send_scale(reply_token, root_note, whichScale)
         else:
             send_not_found(reply_token)
+
+    def on_enter_scaleNoteRootnote(self, event):
+        print("I'm entering scaleNoteRootnote")
+        reply_token = event.reply_token
+        text = "請輸入音階「種類」。"
+        send_text_message(reply_token, text)
