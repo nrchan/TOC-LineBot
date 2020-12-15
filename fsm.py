@@ -10,7 +10,6 @@ class TocMachine():
         self.scale = -1
         self.machine = GraphMachine(
             model=self, 
-            use_pygraphviz=False,
             **{
                 "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
                 , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote", "scaleNoteType"],
@@ -133,7 +132,8 @@ class TocMachine():
                 "initial":"start",
                 "auto_transitions":False,
                 "show_conditions":True,
-            }
+                "use_pygraphviz":False,
+            },
         )
 
     #condition
