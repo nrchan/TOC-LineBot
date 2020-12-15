@@ -66,8 +66,10 @@ def webhook_handler():
 @app.route("/show-fsm", methods=["GET"])
 def show_fsm():
     machine = TocMachine()
-    machine.get_graph().draw("fsm.png", prog="dot", format="png")
-    return send_file("fsm.png", mimetype="image/png")
+    #machine.get_graph().draw("fsm.png", prog="dot", format="png")
+    machine.get_graph().draw("fsm", prog="dot")
+    #return send_file("fsm.png", mimetype="image/png")
+    return send_file("fsm", mimetype="image/png")
 
 
 if __name__ == "__main__":
