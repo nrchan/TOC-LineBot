@@ -132,7 +132,6 @@ class TocMachine():
                 "initial":"start",
                 "auto_transitions":False,
                 "show_conditions":True,
-                "use_pygraphviz":False,
             },
         )
 
