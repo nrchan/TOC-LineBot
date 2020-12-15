@@ -6,7 +6,7 @@ from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendM
 from notes import chordList, scaleList
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
-line_bot_api = LineBotApi(channel_access_token)
+line_bot_api = LineBotApi(str(channel_access_token))
 
 def send_text_message(reply_token, text):
     line_bot_api.reply_message(reply_token, TextSendMessage(text=text))

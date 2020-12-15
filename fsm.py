@@ -151,12 +151,12 @@ class TocMachine():
     def is_going_to_chordResult(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        return len(self.notes) is not 0
+        return len(self.notes) != 0
 
     def is_going_to_chordNoteRootnote(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        return len(self.notes) is not 0
+        return len(self.notes) != 0
 
     def is_going_to_chordNoteType(self, event):
         self.chord = -1
@@ -170,7 +170,7 @@ class TocMachine():
             else:
                 continue
             break
-        if self.chord is -1:
+        if self.chord == -1:
             for i in range(len(chordListAlt)):
                 for j in range(len(chordListAlt[i])):
                     if str(text).lower() == chordListAlt[i][j]:
@@ -179,7 +179,7 @@ class TocMachine():
                 else:
                     continue
                 break
-        return self.chord is not -1
+        return self.chord != -1
 
     def is_going_back_to_chordNote(self, event):
         text = event.message.text
@@ -196,12 +196,12 @@ class TocMachine():
     def is_going_to_scaleResult(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        return len(self.notes) is not 0
+        return len(self.notes) != 0
 
     def is_going_to_scaleNoteRootnote(self, event):
         text = event.message.text
         self.notes = containNotes(text)
-        return len(self.notes) is not 0
+        return len(self.notes) != 0
 
     def is_going_to_scaleNoteType(self, event):
         self.scale = -1
@@ -215,7 +215,7 @@ class TocMachine():
             else:
                 continue
             break
-        if self.scale is -1:
+        if self.scale == -1:
             for i in range(len(scaleListAlt)):
                 for j in range(len(scaleListAlt[i])):
                     if str(text).lower() == scaleListAlt[i][j]:
@@ -224,7 +224,7 @@ class TocMachine():
                 else:
                     continue
                 break
-        return self.scale is not -1
+        return self.scale != -1
 
     def is_going_back_to_scaleNote(self, event):
         text = event.message.text
