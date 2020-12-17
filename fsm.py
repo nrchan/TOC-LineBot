@@ -261,8 +261,8 @@ class TocMachine():
     def on_enter_chordNoteRootnote(self, event):
         print("I'm entering chordNoteRootnote")
         reply_token = event.reply_token
-        text = "請輸入和弦「種類」。"
-        send_text_message(reply_token, text)
+        text = "請輸入和弦「種類」，或點選下方常用和弦。"
+        send_text_message(reply_token, text, "chord")
 
     def on_enter_chordNoteType(self, event):
         print("I'm entering chordNoteType")
@@ -295,8 +295,8 @@ class TocMachine():
     def on_enter_scaleNoteRootnote(self, event):
         print("I'm entering scaleNoteRootnote")
         reply_token = event.reply_token
-        text = "請輸入音階「種類」。"
-        send_text_message(reply_token, text)
+        text = "請輸入音階「種類」，或點選下方常用音階。"
+        send_text_message(reply_token, text, "scale")
 
     def on_enter_scaleNoteType(self, event):
         print("I'm entering chordNoteType")
