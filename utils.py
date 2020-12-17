@@ -2,14 +2,22 @@ import os
 import json
 
 from linebot import LineBotApi, WebhookParser
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate
+from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendMessage, CarouselTemplate, CarouselColumn, MessageTemplateAction, TemplateSendMessage, ConfirmTemplate, QuickReply, QuickReplyButton, MessageAction
 from notes import chordList, scaleList
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 line_bot_api = LineBotApi(str(channel_access_token))
 
 def send_text_message(reply_token, text):
-    line_bot_api.reply_message(reply_token, TextSendMessage(text=text, quick_reply = None))
+    quick_reply = QuickReply(items=[
+            QuickReplyButton(
+                action = MessageAction(label='選択１', text='選択1')
+            ),
+            QuickReplyButton(
+                action = MessageAction(label='選択2', text='選択2')
+            )
+        ])
+    line_bot_api.reply_message(reply_token, TextSendMessage(text=text, quick_reply = quick_reply))
 
     return "OK"
 
