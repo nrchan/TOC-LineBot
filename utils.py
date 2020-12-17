@@ -8,15 +8,18 @@ from notes import chordList, scaleList
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 line_bot_api = LineBotApi(str(channel_access_token))
 
-def send_text_message(reply_token, text):
-    quick_reply = QuickReply(items=[
-            QuickReplyButton(
-                action = MessageAction(label='選択１', text='選択1')
-            ),
-            QuickReplyButton(
-                action = MessageAction(label='選択2', text='選択2')
-            )
-        ])
+def send_text_message(reply_token, text, withNotes = False):
+    quick_reply = None
+    if withNotes:
+        quick_reply = QuickReply(items=[
+                QuickReplyButton(
+                    action = MessageAction(label='C', text='C')
+                ),
+                QuickReplyButton(
+                    action = MessageAction(label='D', text='D')
+                )
+            ])
+    
     line_bot_api.reply_message(reply_token, TextSendMessage(text=text, quick_reply = quick_reply))
 
     return "OK"
