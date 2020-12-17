@@ -303,7 +303,6 @@ class TocMachine():
         print(self.notes)
         text = chordToNote(self.notes, self.chord)
         send_chord_note(reply_token, self.notes[0], self.chord, text)
-        print(self.notes)
 
     def on_enter_scale(self, event):
         print("I'm entering scale")
