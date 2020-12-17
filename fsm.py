@@ -128,6 +128,30 @@ class TocMachine():
                         "dest": "scaleNoteRootnote",
                         "conditions": "is_going_to_scaleNoteRootnote",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "chordNoteType",
+                        "dest": "chordNote",
+                        "conditions": "is_going_to_change_rootNote",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "chordNoteType",
+                        "dest": "chordNoteRootnote",
+                        "conditions": "is_going_to_change_type",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNoteType",
+                        "dest": "scaleNote",
+                        "conditions": "is_going_to_change_rootNote",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "scaleNoteType",
+                        "dest": "scaleNoteRootnote",
+                        "conditions": "is_going_to_change_type",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -229,6 +253,14 @@ class TocMachine():
     def is_going_back_to_scaleNote(self, event):
         text = event.message.text
         return "重來" in text or "再來" in text or "重查" in text
+
+    def is_going_to_change_rootNote(self, event):
+        text = event.message.text
+        return "更改" in text and "根音" in text
+
+    def is_going_to_change_type(self, event):
+        text = event.message.text
+        return "更改" in text and "種類" in text
 
     #on enter
     def on_enter_menu(self, event):

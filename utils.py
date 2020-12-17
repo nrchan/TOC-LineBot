@@ -208,7 +208,7 @@ def send_chord(reply_token, root_note, whichChord):
                         "text": "選單"
                         },
                         "height": "sm"
-                    }
+                    },
                     ]
                 },
                 "styles": {
@@ -373,7 +373,25 @@ def send_chord_note(reply_token, root_note, whichChord, notes):
                         "text": "選單"
                         },
                         "height": "sm"
-                    }
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "我要更改根音",
+                        "text": "更改根音"
+                        },
+                        "height": "sm"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "我要更改和弦種類",
+                        "text": "更改和弦種類"
+                        },
+                        "height": "sm"
+                    },
                     ]
                 },
                 "styles": {
@@ -501,7 +519,25 @@ def send_scale_note(reply_token, root_note, whichScale, notes):
                         "text": "選單"
                         },
                         "height": "sm"
-                    }
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "我要更改根音",
+                        "text": "更改根音"
+                        },
+                        "height": "sm"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                        "type": "message",
+                        "label": "我要更改音階種類",
+                        "text": "更改音階種類"
+                        },
+                        "height": "sm"
+                    },
                     ]
                 },
                 "styles": {
