@@ -299,6 +299,7 @@ class TocMachine():
     def on_enter_chordNoteType(self, event):
         print("I'm entering chordNoteType")
         reply_token = event.reply_token
+        print(self.notes)
         text = chordToNote(self.notes, self.chord)
         send_chord_note(reply_token, self.notes[0], self.chord, text)
 
@@ -333,5 +334,6 @@ class TocMachine():
     def on_enter_scaleNoteType(self, event):
         print("I'm entering chordNoteType")
         reply_token = event.reply_token
+        print(self.notes)
         text = scaleToNote(self.notes, self.scale)
         send_scale_note(reply_token, self.notes[0], self.scale, text)
