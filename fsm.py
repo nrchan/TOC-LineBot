@@ -179,8 +179,8 @@ class TocMachine():
 
     def is_going_to_chordNoteRootnote(self, event):
         text = event.message.text
-        self.notes = containNotes(text)
-        return len(self.notes) != 0
+        if(containNotes(text) != 0): self.notes = containNotes(text)
+        return len(containNotes(text)) != 0
 
     def is_going_to_chordNoteType(self, event):
         self.chord = -1
@@ -224,8 +224,8 @@ class TocMachine():
 
     def is_going_to_scaleNoteRootnote(self, event):
         text = event.message.text
-        self.notes = containNotes(text)
-        return len(self.notes) != 0
+        if(containNotes(text) != 0): self.notes = containNotes(text)
+        return len(containNotes(text)) != 0
 
     def is_going_to_scaleNoteType(self, event):
         self.scale = -1
