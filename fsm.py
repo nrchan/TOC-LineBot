@@ -246,7 +246,7 @@ class TocMachine():
         print("I'm entering chordNote")
         reply_token = event.reply_token
         text = "請先輸入和弦的「根音」。"
-        send_text_message(reply_token, text, True)
+        send_text_message(reply_token, text, "note")
 
     def on_enter_chordResult(self, event):
         print("I'm entering chordResult")
@@ -280,7 +280,7 @@ class TocMachine():
         print("I'm entering scaleNote")
         reply_token = event.reply_token
         text = "請先輸入音階的「根音」。"
-        send_text_message(reply_token, text, True)
+        send_text_message(reply_token, text, "note")
 
     def on_enter_scaleResult(self, event):
         print("I'm entering scaleResult")
