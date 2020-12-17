@@ -255,10 +255,12 @@ class TocMachine():
         return "重來" in text or "再來" in text or "重查" in text
 
     def is_going_to_change_rootNote(self, event):
+        print(self.notes)
         text = event.message.text
         return "更改" in text and "根音" in text
 
     def is_going_to_change_type(self, event):
+        print(self.notes)
         text = event.message.text
         return "更改" in text and "種類" in text
 
