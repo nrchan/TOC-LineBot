@@ -18,11 +18,12 @@ def send_text_message(reply_token, text, quickReplyType = None):
                 QuickReplyButton(action = MessageAction(label='G', text='G')),
                 QuickReplyButton(action = MessageAction(label='A', text='A')),
                 QuickReplyButton(action = MessageAction(label='B', text='B')),
-                QuickReplyButton(action = MessageAction(label='C#/Db', text='C#')),
-                QuickReplyButton(action = MessageAction(label='D#/Eb', text='D#')),
-                QuickReplyButton(action = MessageAction(label='F#/Gb', text='F#')),
-                QuickReplyButton(action = MessageAction(label='G#/Ab', text='G#')),
-                QuickReplyButton(action = MessageAction(label='A#/Bb', text='A#')),
+                QuickReplyButton(action = MessageAction(label='Db', text='Db')),
+                QuickReplyButton(action = MessageAction(label='Eb', text='Eb')),
+                QuickReplyButton(action = MessageAction(label='Gb', text='Gb')),
+                QuickReplyButton(action = MessageAction(label='Ab', text='Ab')),
+                QuickReplyButton(action = MessageAction(label='Bb', text='Bb')),
+                QuickReplyButton(action = MessageAction(label='C#', text='C#')),
             ])
     elif quickReplyType == "chord":
         quick_reply = QuickReply(items=[
@@ -46,13 +47,7 @@ def send_text_message(reply_token, text, quickReplyType = None):
                 QuickReplyButton(action = MessageAction(label='和聲小音階', text='和聲小音階')),
                 QuickReplyButton(action = MessageAction(label='旋律小音階', text='旋律小音階')),
                 QuickReplyButton(action = MessageAction(label='全音音階', text='全音音階')),
-                QuickReplyButton(action = MessageAction(label='半全音階', text='半全音階')),
-                QuickReplyButton(action = MessageAction(label='全半音階', text='全半音階')),
                 QuickReplyButton(action = MessageAction(label='五聲音階(宮調式)', text='宮調式')),
-                QuickReplyButton(action = MessageAction(label='五聲音階(商調式)', text='商調式')),
-                QuickReplyButton(action = MessageAction(label='五聲音階(角調式)', text='角調式')),
-                QuickReplyButton(action = MessageAction(label='五聲音階(徵調式)', text='徵調式')),
-                QuickReplyButton(action = MessageAction(label='五聲音階(羽調式)', text='羽調式')),
             ])
     else:
         quick_reply = None
