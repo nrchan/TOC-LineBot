@@ -1,6 +1,6 @@
 # TOC Project 2020
 
-## Setup
+## 介紹
 
-## Finite State Machine
+## FSM 結構圖
 ![fsm](./img/fsm.png)
