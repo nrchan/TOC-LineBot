@@ -67,8 +67,8 @@ def send_menu_carousel(reply_token):
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    title="和弦名稱",
-                    text="輸入音符名稱，\n查詢它們能組成哪個和弦。🎵",
+                    title="🎧 和弦名稱",
+                    text="輸入音符名稱，\n查詢它們能組成哪個和弦。",
                     thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3fDYPTuUWEr3gCzNRi03e3Zz8D_TcM8uqPlMsML3oheMeU8YZ0NczCSgCshJGr3EDContWiVbuPHFmzunhqVupRrvjwBNpTMQ9_wLYWjFBNfuh5ppJUFhMs4Zof7c6tj-jYMHn90GcgpS2BLln9foE=w640-h424-no",
                     actions=[
                         MessageTemplateAction(
@@ -78,8 +78,8 @@ def send_menu_carousel(reply_token):
                     ]
                 ),
                 CarouselColumn(
-                    title="和弦組成音",
-                    text="輸入和弦名稱，\n查詢它是由什麼音符組成的。🎵",
+                    title="🎶 和弦組成音",
+                    text="輸入和弦名稱，\n查詢它是由什麼音符組成的。",
                     thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3e3KEAfiuly_yOk8-A4ruQA_ska8PNCKCyDEWWI5zEj8xA20CDthHGLBD6YYVYvfbQnp2xi5xH7iJs7Vx-Bj3AZU6gTtWsLEDDRfL1m7UdAiFKPoY_OTPN33GFGbP0v_8djnmpYbuIBCpsAeD3VgLI=w640-h427-no",
                     actions=[
                         MessageTemplateAction(
@@ -89,8 +89,8 @@ def send_menu_carousel(reply_token):
                     ]
                 ),
                 CarouselColumn(
-                    title="音階名稱",
-                    text="輸入音符名稱，\n查詢它們能組成哪個音階。🎵",
+                    title="🎻 音階名稱",
+                    text="輸入音符名稱，\n查詢它們能組成哪個音階。",
                     thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3e9Hc2L-DP-jkWjvJdR05dBIgRetl97uVp7hBbsdy2QLorC2Uqwtk8XELrdhkcgRcxI_C6dwe4q4yGqyRWKnT8A3qQajYdvLoF5yTcnwEogAoUE6EBq7JflzNOr6zFES-53A0EqKDrxDV7vitQ4rdY=w640-h426-no",
                     actions=[
                         MessageTemplateAction(
@@ -100,8 +100,8 @@ def send_menu_carousel(reply_token):
                     ]
                 ),
                 CarouselColumn(
-                    title="音階組成音",
-                    text="輸入音階名稱，\n查詢它是由什麼音符組成的。🎵",
+                    title="🎹 音階組成音",
+                    text="輸入音階名稱，\n查詢它是由什麼音符組成的。",
                     thumbnail_image_url="https://lh3.googleusercontent.com/pw/ACtC-3fNrIahKLEUxHhV_zQBqDH8XUIx_Wg0bdlCGb4dSypatImBndP9viXi_rzxc2Wa1tB8APwureSFN1huiZHUh4m-Da_TszEKtJq0HqlgiOeQrZnvWHo5agtaUGpekWftAc-qKd8RrR1hLQyP33idsh8=w640-h427-no",
                     actions=[
                         MessageTemplateAction(
