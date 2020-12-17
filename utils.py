@@ -18,6 +18,11 @@ def send_text_message(reply_token, text, quickReplyType = None):
                 QuickReplyButton(action = MessageAction(label='G', text='G')),
                 QuickReplyButton(action = MessageAction(label='A', text='A')),
                 QuickReplyButton(action = MessageAction(label='B', text='B')),
+                QuickReplyButton(action = MessageAction(label='C#', text='C#/Db')),
+                QuickReplyButton(action = MessageAction(label='D#', text='D#/Eb')),
+                QuickReplyButton(action = MessageAction(label='F#', text='F#/Gb')),
+                QuickReplyButton(action = MessageAction(label='G#', text='G#/Ab')),
+                QuickReplyButton(action = MessageAction(label='A#', text='A#/Bb')),
             ])
     else:
         quick_reply = None
