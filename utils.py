@@ -12,12 +12,13 @@ def send_text_message(reply_token, text, withNotes = False):
     quick_reply = None
     if withNotes:
         quick_reply = QuickReply(items=[
-                QuickReplyButton(
-                    action = MessageAction(label='C', text='C')
-                ),
-                QuickReplyButton(
-                    action = MessageAction(label='D', text='D')
-                )
+                QuickReplyButton(action = MessageAction(label='C', text='C')),
+                QuickReplyButton(action = MessageAction(label='D', text='D')),
+                QuickReplyButton(action = MessageAction(label='E', text='E')),
+                QuickReplyButton(action = MessageAction(label='F', text='F')),
+                QuickReplyButton(action = MessageAction(label='G', text='G')),
+                QuickReplyButton(action = MessageAction(label='A', text='A')),
+                QuickReplyButton(action = MessageAction(label='B', text='B')),
             ])
     
     line_bot_api.reply_message(reply_token, TextSendMessage(text=text, quick_reply = quick_reply))
