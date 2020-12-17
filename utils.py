@@ -9,7 +9,7 @@ channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 line_bot_api = LineBotApi(str(channel_access_token))
 
 def send_text_message(reply_token, text):
-    line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
+    line_bot_api.reply_message(reply_token, TextSendMessage(text=text, quick_reply = None))
 
     return "OK"
 
