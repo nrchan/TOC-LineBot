@@ -8,17 +8,24 @@
 一開始會出現選單。可以查詢「和弦名稱」、「和弦組成音」、「音階名稱」還有「音階組成音」。 
 > 可以直接點選需要的功能，或是自行輸入。
 
-#### - 和弦名稱
-<img src="./img/chordname.jpg" alt="drawing" width="400"> 
+### 特點
+- 懶得打字也可以直接按按鈕
+<img src="./img/quickreply.png" alt="(圖)Quick Reply" width="400">  
 
-#### - 和弦組成音
-<img src="./img/chordnote.jpg" alt="drawing" width="400"> 
+- 除了認識 A 到 G 七顆音符和升降記號，還認識重升/重降記號。
+- 不用依照組成音的音高依序輸入。
 
-#### - 音階名稱
-<img src="./img/scalename.jpg" alt="drawing" width="400"> 
+### 和弦名稱
+<img src="./img/chordname.jpg" alt="(圖)和弦名稱" width="400"> 
 
-#### - 音階組成音
-<img src="./img/scalenote.jpg" alt="drawing" width="400"> 
+### 和弦組成音
+<img src="./img/chordnote.jpg" alt="(圖)和弦組成音" width="400"> 
+
+### 音階名稱
+<img src="./img/scalename.jpg" alt="(圖)音階名稱" width="400"> 
+
+### 音階組成音
+<img src="./img/scalenote.jpg" alt="(圖)音階組成音" width="400"> 
 
 ## FSM 結構圖
 ![fsm](./img/fsm.png)
