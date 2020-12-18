@@ -7,13 +7,13 @@
 一開始會出現選單。可以查詢「和弦名稱」、「和弦組成音」、「音階名稱」還有「音階組成音」。 
 > 可以直接點選需要的功能，或是自行輸入。
 #### - 和弦名稱
-<img src="./img/chordname.jpg" alt="drawing" width="200"/>
+<img src="./img/chordname.jpg" alt="drawing" width="300"/> 
 #### - 和弦組成音
-![和弦組成音](./img/chordnote.jpg)
+<img src="./img/chordnote.jpg" alt="drawing" width="300"/> 
 #### - 音階名稱
-![音階名稱](./img/scalename.jpg)
+<img src="./img/scalename.jpg" alt="drawing" width="300"/> 
 #### - 音階組成音
-![音階組成音](./img/scalenote.jpg)
+<img src="./img/scalenote.jpg" alt="drawing" width="300"/> 
 
 ## FSM 結構圖
 ![fsm](./img/fsm.png)
