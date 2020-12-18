@@ -1,6 +1,6 @@
 import re
 
-note = r"[A-G]#?b{0,2}"
+note = r"[A-G]#?x?b{0,2}"
 
 noteNumDict = {
     "C"  : 0,
