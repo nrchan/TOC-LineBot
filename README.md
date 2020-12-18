@@ -18,7 +18,7 @@
 <img src="./img/doublesupport.jpg" alt="(圖)重升 C" width="400">  
 
 - 不用依照組成音的音高依序輸入。\
-(最規則來說應該是 A D E)
+(最規則來說應該是 A D E ↓)
 <img src="./img/disorderok.jpg" alt="(圖)順序" width="400">  
 
 - 音符之間不用輸入特定的分隔符號。使用空白，或甚至黏在一起也 OK。
