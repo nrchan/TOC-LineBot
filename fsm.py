@@ -158,6 +158,12 @@ class TocMachine():
                         "dest": "fsm",
                         "conditions": "is_going_to_fsm",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "fsm",
+                        "dest": "menu",
+                        "conditions": "is_going_to_menu",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -353,4 +359,3 @@ class TocMachine():
         print("I'm entering fsm")
         reply_token = event.reply_token
         send_text_message(reply_token, "FSM")
-        self.machine.set_state("menu")
