@@ -358,4 +358,4 @@ class TocMachine():
         print("I'm entering fsm")
         reply_token = event.reply_token
         send_text_message(reply_token, "FSM")
-        self.machine.fsmBack(event)
+        self.machine.fsmBack()
