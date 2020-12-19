@@ -12,7 +12,7 @@ class TocMachine():
             model=self, 
             **{
                 "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
-                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote", "scaleNoteType"],
+                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote", "scaleNoteType", "fsm"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -152,6 +152,17 @@ class TocMachine():
                         "dest": "scaleNoteRootnote",
                         "conditions": "is_going_to_change_type",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "*",
+                        "dest": "fsm",
+                        "conditions": "is_going_to_fsm",
+                    },
+                    {
+                        "trigger": "fsmBack",
+                        "source": "fsm",
+                        "dest": "menu",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -263,6 +274,10 @@ class TocMachine():
         text = event.message.text
         return "更改" in text and "種類" in text
 
+    def is_going_to_fsm(self, event):
+        text = event.message.text
+        return "fsm" in str(text).lower()
+
     #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
@@ -338,3 +353,9 @@ class TocMachine():
         print(self.notes)
         text = scaleToNote(self.notes, self.scale)
         send_scale_note(reply_token, self.notes[0], self.scale, text)
+
+    def on_enter_fsm(self, event):
+        print("I'm entering fsm")
+        reply_token = event.reply_token
+        send_text_message(reply_token, "FSM")
+        self.machine.fsmBack(event)
