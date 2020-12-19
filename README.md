@@ -63,4 +63,5 @@
 
 ## FSM 結構圖
 > 在任何狀態輸入「FSM」皆可查看 FSM 圖  
+
 ![fsm](./img/fsm.png)
