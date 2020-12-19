@@ -17,6 +17,12 @@ class TocMachine():
                     {
                         "trigger": "advance",
                         "source": "*",
+                        "dest": "fsm",
+                        "conditions": "is_going_to_fsm",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "*",
                         "dest": "menu",
                         "conditions": "is_going_to_menu",
                     },
@@ -151,12 +157,6 @@ class TocMachine():
                         "source": "scaleNoteType",
                         "dest": "scaleNoteRootnote",
                         "conditions": "is_going_to_change_type",
-                    },
-                    {
-                        "trigger": "advance",
-                        "source": "*",
-                        "dest": "fsm",
-                        "conditions": "is_going_to_fsm",
                     },
                     {
                         "trigger": "advance",
