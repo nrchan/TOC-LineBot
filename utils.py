@@ -553,8 +553,6 @@ def send_scale_note(reply_token, root_note, whichScale, notes):
 def send_fsm(reply_token):
     line_bot_api.reply_message(
         reply_token,
-        ImageSendMessage("https://lh3.googleusercontent.com/pw/ACtC-3dv0dTn-45EryPyNIWrarZAj0aD35QyV0CPNu1nTkQP1tdY5q8EvpGFuJFegz9Pkr0Le8pe6p2kNcXvHwLPAlOVJ1YvnuTlAeZoSGTwb50NGKfksvFIiYalFEEfBCssWHwDFYIl5xC_3cQn_4Ls0GE=w2258-h772-no?authuser=2",
-            quick_reply = QuickReply(items=[QuickReplyButton(action = MessageAction(label='回到「選單」', text='選單')),])
-            )
+        ImageSendMessage("https://lh3.googleusercontent.com/pw/ACtC-3dv0dTn-45EryPyNIWrarZAj0aD35QyV0CPNu1nTkQP1tdY5q8EvpGFuJFegz9Pkr0Le8pe6p2kNcXvHwLPAlOVJ1YvnuTlAeZoSGTwb50NGKfksvFIiYalFEEfBCssWHwDFYIl5xC_3cQn_4Ls0GE=w2258-h772-no?authuser=2")
         )
     return "OK"
