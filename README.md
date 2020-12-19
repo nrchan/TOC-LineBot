@@ -11,8 +11,8 @@
 但是很勤勞當然可以自己打~
 <img src="./img/quickreply.png" alt="(圖)Quick Reply" width="400">  
 
-- 除了認識 A 到 G 七顆音符和升降記號，還認識重升/重降記號。不會混淆降記號(b)和重降記號(bb)。\
-或像是重升 C 也認識~ ↓
+- 除了認識 A 到 G 七顆音符和升降記號，還認識重升/重降記號。\
+不會混淆降記號(b)和重降記號(bb)。
 <img src="./img/doublesupport.jpg" alt="(圖)重升 C" width="400">  
 
 - 不用依照組成音的音高依序輸入。\
