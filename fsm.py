@@ -1,6 +1,6 @@
 from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList, scaleListAlt, scaleToNote
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale, send_scale_note
+from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale, send_scale_note, send_fsm
 
 
 class TocMachine():
@@ -358,4 +358,4 @@ class TocMachine():
     def on_enter_fsm(self, event):
         print("I'm entering fsm")
         reply_token = event.reply_token
-        send_text_message(reply_token, "FSM")
+        send_fsm(reply_token)

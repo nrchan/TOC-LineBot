@@ -549,3 +549,44 @@ def send_scale_note(reply_token, root_note, whichScale, notes):
         )
     )
     return "OK"
+
+def send_fsm(reply_token):
+    line_bot_api.reply_message(reply_token,
+        FlexSendMessage(
+            "FSM 圖",
+            {
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://lh3.googleusercontent.com/pw/ACtC-3dv0dTn-45EryPyNIWrarZAj0aD35QyV0CPNu1nTkQP1tdY5q8EvpGFuJFegz9Pkr0Le8pe6p2kNcXvHwLPAlOVJ1YvnuTlAeZoSGTwb50NGKfksvFIiYalFEEfBCssWHwDFYIl5xC_3cQn_4Ls0GE=w2258-h772-no?authuser=2",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "fit",
+                    "animated": True
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "sm",
+                    "contents": [
+                    {
+                        "type": "button",
+                        "style": "link",
+                        "height": "sm",
+                        "action": {
+                        "type": "message",
+                        "label": "回到「選單」",
+                        "text": "選單"
+                        }
+                    },
+                    {
+                        "type": "spacer",
+                        "size": "sm"
+                    }
+                    ],
+                    "flex": 0
+                }
+            }
+        )
+    )
+    return "OK"
