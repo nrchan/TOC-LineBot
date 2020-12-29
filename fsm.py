@@ -379,4 +379,4 @@ class TocMachine():
     def on_enter_demo(self, event):
         print("I'm entering demo")
         reply_token = event.reply_token
-        send_fsm(reply_token)
+        send_demo(reply_token)
