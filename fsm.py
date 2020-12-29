@@ -1,6 +1,6 @@
 from notes import containNotes, noteToNumber, notesToChord, chordList, chordToNote, chordListAlt, notesToScale, scaleList, scaleListAlt, scaleToNote
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale, send_scale_note, send_fsm
+from utils import send_text_message, send_menu_carousel, send_chord, send_not_found, send_chord_note, send_scale, send_scale_note, send_fsm, send_demo
 
 
 class TocMachine():
@@ -12,7 +12,7 @@ class TocMachine():
             model=self, 
             **{
                 "states":["start", "menu", "chord", "chordResult", "chordNote", "chordNoteRootnote", "chordNoteType"
-                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote", "scaleNoteType", "fsm"],
+                , "scale", "scaleResult", "scaleNote", "scaleNoteRootnote", "scaleNoteType", "fsm", "demo"],
                 "transitions":[
                     {
                         "trigger": "advance",
@@ -164,6 +164,18 @@ class TocMachine():
                         "dest": "menu",
                         "conditions": "is_going_to_menu",
                     },
+                    {
+                        "trigger": "advance",
+                        "source": "menu",
+                        "dest": "demo",
+                        "conditions": "is_going_to_demo",
+                    },
+                    {
+                        "trigger": "advance",
+                        "source": "demo",
+                        "dest": "menu",
+                        "conditions": "is_going_to_menu",
+                    },
                 ],
                 "initial":"start",
                 "auto_transitions":False,
@@ -279,6 +291,10 @@ class TocMachine():
         text = event.message.text
         return "fsm" in str(text).lower()
 
+    def is_going_to_demo(self, event):
+        text = event.message.text
+        return "demo" in str(text).lower()
+
     #on enter
     def on_enter_menu(self, event):
         print("I'm entering menu")
@@ -357,5 +373,10 @@ class TocMachine():
 
     def on_enter_fsm(self, event):
         print("I'm entering fsm")
+        reply_token = event.reply_token
+        send_fsm(reply_token)
+
+    def on_enter_demo(self, event):
+        print("I'm entering demo")
         reply_token = event.reply_token
         send_fsm(reply_token)

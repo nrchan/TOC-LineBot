@@ -560,3 +560,13 @@ def send_fsm(reply_token):
             )
         )
     return "OK"
+
+def send_demo(reply_token):
+    line_bot_api.reply_message(
+        reply_token,
+        TextSendMessage(
+            text="Hello world ~",
+            quick_reply=QuickReply(items=[QuickReplyButton(action = MessageAction(label='回到「選單」', text='選單'))])
+            )
+        )
+    return "OK"
